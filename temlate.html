@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Penggunaan</title>
+  <style>
+    body {
+      font-family: "Fira Code", "Consolas", monospace;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.7;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      color: #fff;
+    }
+    .note {
+      background: #1e1e1e;
+      border-left: 4px solid #64b5f6;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    pre {
+      background: #1a1a1a;
+      color: #dcdcdc;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .output {
+      background: #000;
+      color: #00e676;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-family: "Fira Code", monospace;
+    }
+    .example {
+      background: #1c1c1c;
+      border: 1px dashed #555;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .highlight-tag {
+      background: #263238;
+      color: #4fc3f7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .highlight-method {
+      background: #263238;
+      color: #ffcb6b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .highlight-attr {
+      background: #263238;
+      color: #81c784;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contoh Penggunaan Template</h1>
+
+    <div class="note">
+      Ini adalah catatan penting. Misalnya, pastikan selalu menaruh 
+      tag <span class="highlight-tag">&lt;script&gt;</span> di bagian bawah 
+      <span class="highlight-tag">&lt;body&gt;</span>.
+    </div>
+
+    <h2>Code Block</h2>
+    <pre><code>document.getElementById("demo").innerHTML = "Halo Dunia!";</code></pre>
+
+    <h2>Output</h2>
+    <div class="output">
+      Halo Dunia!
+    </div>
+
+    <h2>Example</h2>
+    <div class="example">
+      <p>Contoh penggunaan atribut <span class="highlight-attr">id</span>:</p>
+      <pre><code>&lt;div id="demo"&gt;Teks Awal&lt;/div&gt;</code></pre>
+    </div>
+
+    <h2>Highlight Inline</h2>
+    <p>Kamu bisa menggunakan method 
+      <span class="highlight-method">getElementById()</span> 
+      untuk memilih elemen dengan atribut 
+      <span class="highlight-attr">id</span>.
+    </p>
+  </div>
+</body>
+</html>
