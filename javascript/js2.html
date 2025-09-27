@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catatan Belajar Coding</title>
+  <style>
+    /* Warna pastel gelap cozy */
+    :root {
+      --bg: #1e1e2f;
+      --fg: #eaeaea;
+      --accent: #a8dadc;
+      --accent2: #f4a261;
+      --accent3: #b5e48c;
+      --note-bg: #2a2a40;
+      --code-bg: #2b2d42;
+      --output-bg: #264653;
+      --mark-bg: #2d2d3f;
+      --mark-tx: #ffe066;
+      --marklink-tx: #3399ff; /* biru terang */
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1, h1, h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    h1 { color: var(--accent); }
+    h1 { color: var(--accent2); }
+    h2 { color: var(--accent3); }
+
+    ul, ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    table, th, td {
+      border: 1px solid var(--accent);
+    }
+
+    th, td {
+      padding: 0.7rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--note-bg);
+    }
+
+    .note {
+      background: var(--note-bg);
+      padding: 1rem;
+      border-left: 4px solid var(--accent2);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    pre, code {
+      background: var(--code-bg);
+      color: #f1faee;
+      font-family: "Fira Code", monospace;
+      border-radius: 6px;
+    }
+
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    .output {
+      background: var(--output-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-family: monospace;
+      color: #d9f9f9;
+    }
+
+    mark {
+      background: var(--mark-bg);
+      color: var(--mark-tx);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+    marklink{
+      background: var(--mark-bg);
+      color: var(--marklink-tx);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Pengenalan JavaScript</h1>
+    <h2>Sejarah JavaScript</h2>
+    <p>JavaScript atau sering disingkat JS, <mark>pertama kali dibuat tahun 1995</mark>. Programmer <mark>Netscape Communications Corporation</mark> bernama <mark>Brandan Eich</mark> membuat sebuah bahasa pemrograman scripting untuk berjalan di <mark>Netscape Navigator Browser</mark>.</p>
+    <p>Awalnya namanya adalah <mark>Mocha</mark>, lalu berubah menjadi <mark>LiveScript</mark>, dan akhirnya menjadi <mark>JavaScript</mark></p>
+    <p>JavaScript dibuat agar halaman website yang sudah kita buat menggunakan HTML dan CSS bisa lebih interaktif</p>
+    <p>sekarang secara default semua browser sudah bisa menjalankan JavaScript tanpa harus menginstall aplikasi tambahan seperti Java Applet dan Adobe Flash Player.</p>
+
+    <h2>JavaScript di Server</h2>
+    <p>Awalnya JavaScript memang kebanyakan di gunakan untuk berjalan di client side (Browser)</p>
+    <p>Namun akhir-akhir ini, semenjak keluar teknologi <mark>NodeJS</mark> yang bisa digunakan untuk menjalankan JavaScript tanpa browser, sekarang akhirnya JavaScript juga banyak digunakan untuk membuat aplikasi di Server</p>
+    <p>Karena ini, akhirnya sekarang JavaScript dikenal dengan bahasa pemrograman FullStack (Backend dan Frontend) karena bisa digunakan untuk membuat aplikasi Backend dan aplikasi FrontEnd.</p>
+    
+    <h2>JavaScript dan ECMAScript</h2>
+    <p>Karena JavaScript sekarang hampir di adopsi oleh semua aplikasi browser, akhirnya dibuatlah sebuah standarisasi yang bernama <mark>ECMAScript</mark></p>
+    <p>Organisaasi yang melakukan standarisasi <mark>ECMAScript</mark> adalah <mark>ECMA International</mark></p>
+    <p>Sekarang dengan adanya standarisasi, kita bisa pastikan bahwa kode program JavaScript kita bisa jalan di semua browser, karena browser yang ingin mendukung JavaScript harus mengikuti standarisasi ECMAScript.</p>
+    <p>bisa dibilang ECMAScript dan JavaScript adalah dua nama untuk satu bahasa pemrograman yang sama</p>
+    <p><a href="https://www.ecma-international.org/"><marklink>https://www.ecma-international.org/</marklink></a></p>
+
+    <h2>JavaScript vs Java</h2>
+    <p>Pemula programmer sering salah tentang JavaScript dan Java. Ada yang mengira bahwa Java dan JavaScript adalah bahasa pemrograman yang sama, padahal itu berbeda</p>
+    <p>Java adalah bahasa pemrograman lain yang tidak ada hubungannya dengan JavaScript</p>
+    <p>Walaupun namanya ada kata "Java"nya, tapi dua bahasa pemrograman ini benar-benar berbeda, tidak ada hubungannya sama sekali.</p>
+
+    <h2>Peralatan Development</h2>
+    <p>Saat kita belajar JavaScript, kita perlu menyiapkan beberapa perangkat lunak untuk membantu development</p>
+    <p>Browser, ini sudah pasti, karena kita perlu menjalankan kode program JavaScript menggunakan Browser</p>
+    <p>TextEditor atau Integrated Development Environment, ini digunakan untuk membuat kode program JavaScript</p>
+
+    <h2>Browser</h2>
+    <table>
+      <tr>
+        <th>Perusahaan</th>
+        <th>Browser</th>
+        <th>Tautan Resmi</th>
+      </tr>
+      <tr>
+        <td>Google</td>
+        <td>Google Chrome</td>
+        <td><a href="https://www.google.com/chrome/"><marklink>https://www.google.com/chrome/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>Mozilla Foundation</td>
+        <td>Firefox</td>
+        <td><a href="https://www.mozilla.org/firefox/"><marklink>https://www.mozilla.org/firefox/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>Microsoft</td>
+        <td>Edge</td>
+        <td><a href="https://www.microsoft.com/edge"><marklink>https://www.microsoft.com/edge</marklink></a></td>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>Safari</td>
+        <td><a href="https://www.apple.com/safari/"><marklink>https://www.apple.com/safari/</marklink></a></td>
+      </tr>
+            <tr>
+        <td>Opera Software</td>
+        <td>Opera</td>
+        <td><a href="https://www.opera.com/"><marklink>https://www.opera.com/</marklink></a></td>
+      </tr>
+    </table>
+
+    <h2>Text Editor atau IDE</h2>
+    <table>
+      <tr>
+        <th>Perusahaan</th>
+        <th>Editor</th>
+        <th>Tautan Resmi</th>
+      </tr>
+      <tr>
+        <td>Microsoft</td>
+        <td>Visual Studio Code</td>
+        <td><a href="http://code.visualstudio.com/"><marklink>http://code.visualstudio.com/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>GitHub (sebelumnya Atom Team)</td>
+        <td>Atom</td>
+        <td><a href="https://atom.io/"><marklink>https://atom.io/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>Sublime HQ</td>
+        <td>Sublime Text</td>
+        <td><a href="https://www.sublimetext.com/"><marklink>https://www.sublimetext.com/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>JetBrains</td>
+        <td>WebStorm</td>
+        <td><a href="https://www.jetbrains.com/webstorm/"><marklink>https://www.jetbrains.com/webstorm/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>Don Ho</td>
+        <td>Notepad++</td>
+        <td><a href="https://notepad-plus-plus.org/"><marklink>https://notepad-plus-plus.org/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>MacroMates</td>
+        <td>TextMate</td>
+        <td><a href="https://macromates.com/"><marklink>https://macromates.com/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>Free Software Foundation</td>
+        <td>GNU Emacs</td>
+        <td><a href="https://www.gnu.org/software/emacs/"><marklink>https://www.gnu.org/software/emacs/</marklink></a></td>
+      </tr>
+      <tr>
+        <td>GNOME Project</td>
+        <td>GEdit</td>
+        <td><a href="https://wiki.gnome.org/Apps/Gedit"><marklink>https://wiki.gnome.org/Apps/Gedit</marklink></a></td>
+      </tr>
+    </table>
+    <h1>Program Helo World</h1>
+    <h2>Membuat Kode JavaScript</h2>
+    <p>Ada beberapa cara untuk membuat kode JavaScript.</p>
+    <p>Bisa langsung di file HTML</p>
+    <p>Atau bisa menggunakan file .js (ekstensi untuk JavaScript), lalu di include di dalam file HTML</p>
+    <p>Pada praktek course ini kita akan menggunakan HTML langsung agar mudah membuat kode program nya</p>
+
+    <h2>Script JavaScript</h2>
+        <pre><code>&lt;html&gt;
+  &lt;body&gt;
+  &lt;script&gt;
+    document.writeln("Halo Dunia Penuh Derita!")
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&lt;</code></pre>
+
+    <h2>Include Script JavaScript</h2>
+        <pre><code>&lt;html&gt;
+  &lt;body&gt;
+  &lt;script src="scripts/hello-word.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&lt;</code></pre>
+
+    <h2>Titik Koma</h2>
+    <p>JavaScript mirip seperti bahasa pemrograman C/C++, dimana di akhir tiap statement kode program, kita perlu menambahkan ; (titik koma)</p>
+    <p>Namun, di JavaScript tanda ; (titik koma) tidak wajib, jadi kita bisa menambahkan ataupun tidak.</p>
+    <p>Sangat disarankan konsisten, jika ingin menggunakan titik koma, gunakan disemua tempat, jika tidak, jangan gunakan di semua tempat</p>
+    <p>Saya sendiri lebih merekomendasikan menggunakan titik koma</p>
+
+    <h1>Komentar</h1>
+    <h2>Komentar</h2>
+    <p>Komentar adalah kode program yang tidak akan dieksekusi ketika dibaca</p>
+    <p>Komentar biasanya digunakan sebagai informasi tambahan atau petunjuk</p>
+    <p>Di JavaScript, kita bisa menambahkan kode komentar</p>
+        <pre><code>// Komentar satu baris
+document.writeln("&lt;p&gt;Halo dunia!&lt;/p&gt;");
+/*
+Komentar ini bisa lebih dari satu baris
+coba saja
+*/
+document.writeln("&lt;p&gt;Halo dunia!&lt;/p&gt;");</code></pre>
+    
+  </main>
+</body>
+</html>

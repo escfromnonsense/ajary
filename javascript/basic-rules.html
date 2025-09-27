@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Penggunaan</title>
+  <style>
+    body {
+      font-family: "Fira Code", "Consolas", monospace;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.7;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      color: #fff;
+    }
+    .note {
+      background: #1e1e1e;
+      border-left: 4px solid #64b5f6;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    pre {
+      background: #1a1a1a;
+      color: #dcdcdc;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .output {
+      background: #000;
+      color: #00e676;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-family: "Fira Code", monospace;
+    }
+    .example {
+      background: #1c1c1c;
+      border: 1px dashed #555;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .highlight-tag {
+      background: #263238;
+      color: #4fc3f7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .highlight-method {
+      background: #263238;
+      color: #ffcb6b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .highlight-attr {
+      background: #263238;
+      color: #81c784;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .highlight-word {
+      background: #263238;
+      color: lightgreen;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>2. Basic Rules</h1>
+    <p>Seperti yang sudah dijelaskan sebelumnya, JavaScript tidak diterjemahkan dari kode yang ditulis manusia menjadi bentuk khusus agar browser bisa memahaminya. Skrip JavaScript dikirim ke browser bersama aset lain seperti markup (HTML), gambar, dan stylesheet (CSS). Browser menafsirkannya persis seperti yang ditulis: sebagai urutan karakter Unicode yang bisa dibaca manusia, dan dibaca dari kiri ke kanan serta dari atas ke bawah.</p>
+    <p>Saat sebuah interpreter JavaScript menerima skrip, pertama-tama ia melakukan analisis leksikal, yaitu memecah rangkaian panjang karakter dalam skrip menjadi beberapa elemen masukan terpisah berikut:</p>
+    <p>
+        - <span class="highlight-word">Tokens</span>: Bagian penting seperti kata kunci (let, if), nama variabel, angka, dan simbol (+, =).<br>
+        - Format control characters: Karakter khusus untuk mengatur teks, misalnya tanda akhir baris tertentu.<br>
+        - Line terminators: Penanda akhir baris seperti \n (enter).<br>
+        - Comments: Teks catatan yang diabaikan saat dijalankan, misalnya // catatan.<br>
+        - Whitespace: Ruang kosong, tab, atau spasi yang memisahkan bagian kode agar lebih mudah dibaca.
+
+    </p>
+    <p>Hasil dari sebuah skrip tidak akan tetap ada setelah halaman dimuat ulang atau ketika berpindah ke halaman lain, dengan kata lain jika kamu menulis kode JavaScript yang mengubah teks atau warna halaman, perubahan itu hilang ketika halaman direfresh atau kamu pindah ke halaman lain, kecuali kamu menambahkan kode khusus untuk menyimpan data (misalnya memakai localStorage, cookies, atau database)</p>
+    <p>Secara umum, aplikasi JavaScript tersusun dari statements dan expressions.</p>
+    <h2>2.1. Statements</h2>
+    <p>Sebuah statement adalah satuan instruksi yang terdiri dari satu atau lebih baris kode yang mewakili suatu aksi. misalnya membuat variabel, memanggil fungsi, atau menulis if. Berikut adalah contoh penggunaan statement untuk memberi nilai pada variabel bernama <span class="highlight-attr">myVariable</span>:<br>contoh code :</p>
+    <pre><code>let myVariable = 4;
+myVariable;
+</code></pre>
+<p>output :</p>
+    <div class="output">
+      4
+    </div>
+    
+    <p>Statement sebaiknya diakhiri dengan tanda titik koma (;). Walaupun tidak selalu wajib karena adanya fitur Automatic Semicolon Insertion (ASI). Namun, ASI hanyalah mekanisme perbaikan error, bukan fitur yang bisa diandalkan. Terlalu bergantung pada ASI dapat menimbulkan ambiguitas dan menyebabkan error yang sulit dilacak. Karena itu, praktik terbaik adalah selalu menuliskan titik koma secara eksplisit di akhir statement.</p>
+    <h2>2.2. Block Statements</h2>
+    <p>Block statement digunakan untuk mengelompokkan beberapa perintah (statements) ke dalam satu kesatuan dengan tanda kurung kurawal <span class="highlight-attr">{ }</span>.</p>
+    <p>Hal ini memungkinkan kita menulis banyak perintah di tempat yang biasanya hanya memperbolehkan satu perintah. Tanda <span class="highlight-attr">{ }</span> disebut juga curly braces, yang menandai awal dan akhir sebuah blok.<br>contoh :</p>
+        <pre><code>if (x === 2) {
+  console.log("Nilai x adalah 2");
+  alert("Halo!");
+  x = x + 5;
+}
+</code></pre>
+
+    <p>Bagian dalam <span class="highlight-attr">{ }</span> bisa berisi berbagai perintah, misalnya menampilkan teks, melakukan perhitungan, atau memanggil fungsi.</p>   
+    <h2>2.3. Expressions</h2>
+    <p>Expression adalah potongan kode yang menghasilkan sebuah nilai, sehingga bisa digunakan di mana saja nilai dibutuhkan.<br>contoh :</p>
+    <pre><code>2 + 2;</code></pre>
+    <p>output :</p>
+    <div class="output">
+      4
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="note">
+      Ini adalah catatan penting. Misalnya, pastikan selalu menaruh 
+      tag <span class="highlight-tag">&lt;script&gt;</span> di bagian bawah 
+      <span class="highlight-tag">&lt;body&gt;</span>.
+    </div>
+
+    <h2>Code Block</h2>
+    <pre><code>document.getElementById("demo").innerHTML = "Halo Dunia!";</code></pre>
+
+    <h2>Output</h2>
+    <div class="output">
+      Halo Dunia!
+    </div>
+
+    <h2>Example</h2>
+    <div class="example">
+      <p>Contoh penggunaan atribut <span class="highlight-attr">id</span>:</p>
+      <pre><code>&lt;div id="demo"&gt;Teks Awal&lt;/div&gt;</code></pre>
+    </div>
+
+    <h2>Highlight Inline</h2>
+    <p>Kamu bisa menggunakan method 
+      <span class="highlight-method">getElementById()</span> 
+      untuk memilih elemen dengan atribut 
+      <span class="highlight-attr">id</span>.
+    </p>
+  </div>
+</body>
+</html>

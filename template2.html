@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi Belajar Coding</title>
+  <style>
+    :root {
+      --bg-color: #1e1e2e;
+      --text-color: #e0e0e0;
+      --heading-color: #ffffff;
+      --accent-color: #82aaff;
+      --highlight-bg: #2d2d3f;
+      --highlight-text: #ffe066;
+      --card-bg: #2a2a3d;
+      --inline-code-bg: #2d2d3f;
+      --inline-code-color: #ffcc99;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+
+    header {
+      background: #181825;
+      padding: 1rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #2c2c3a;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--heading-color);
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--heading-color);
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.2rem; }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Inline code */
+    p code {
+      background: var(--inline-code-bg);
+      color: var(--inline-code-color);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: "Fira Code", monospace;
+      font-size: 0.9rem;
+    }
+
+    /* Highlight mirip code tapi beda warna */
+    mark {
+      background: var(--highlight-bg);
+      color: var(--highlight-text);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: "Fira Code", monospace;
+      font-size: 0.9rem;
+    }
+
+    /* Block code */
+    pre {
+      background: #2d2d3f;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: "Fira Code", monospace;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+
+    /* Keyword */
+    .token-keyword { color: #c792ea; }
+
+    /* String */
+    .token-string { color: #ecc48d; }
+
+    /* Number */
+    .token-number { color: #f78c6c; }
+
+    /* Boolean, null */
+    .token-boolean,
+    .token-null { color: #ff5370; }
+
+    /* Function / method */
+    .token-function { color: #82aaff; }
+
+    /* Variable / identifier */
+    .token-variable { color: #c3e88d; }
+
+    /* Operator */
+    .token-operator { color: #89ddff; }
+
+    /* Comment */
+    .token-comment { color: #5c6370; font-style: italic; }
+
+
+    /* Catatan penting */
+    .note {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent-color);
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #2c2c3a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Dokumentasi Belajar Coding</h1>
+  </header>
+
+  <main>
+    <h2>1. Variabel</h2>
+    <p>
+      Untuk membuat variabel di JavaScript kita bisa menggunakan 
+      <code>let</code> atau <code>const</code>.  
+      Jika variabel tidak akan berubah, gunakan <mark>const</mark>.  
+    </p>
+
+    <h3>Contoh Kode:</h3>
+    <pre><code>// Deklarasi variabel
+let nama = "Budi";
+const umur = 17;
+
+console.log(`Halo, nama saya ${nama}, umur saya ${umur}`);
+</code></pre>
+<pre><code>
+<span class="token-keyword">let</span> <span class="token-variable">nama</span> = <span class="token-string">"Budi"</span>;
+</code></pre>
+
+    <h4>Output:</h4>
+    <pre><code>Halo, nama saya Budi, umur saya 17</code></pre>
+
+    <div class="note">
+      <strong>Asal Tau:</strong> <code>let</code> bisa diubah nilainya, 
+      sedangkan <mark>const</mark> tidak bisa diubah setelah didefinisikan.
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Dokumentasi Coding Pribadi
+  </footer>
+</body>
+</html>
