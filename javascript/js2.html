@@ -241,7 +241,7 @@
     <p>Pada praktek course ini kita akan menggunakan HTML langsung agar mudah membuat kode program nya</p>
 
     <h2>Script JavaScript</h2>
-        <pre><code>&lt;html&gt;
+    <pre><code>&lt;html&gt;
   &lt;body&gt;
   &lt;script&gt;
     document.writeln("Halo Dunia Penuh Derita!")
@@ -250,7 +250,7 @@
 &lt;/html&lt;</code></pre>
 
     <h2>Include Script JavaScript</h2>
-        <pre><code>&lt;html&gt;
+    <pre><code>&lt;html&gt;
   &lt;body&gt;
   &lt;script src="scripts/hello-word.js"&gt;&lt;/script&gt;
   &lt;/body&gt;
@@ -267,14 +267,619 @@
     <p>Komentar adalah kode program yang tidak akan dieksekusi ketika dibaca</p>
     <p>Komentar biasanya digunakan sebagai informasi tambahan atau petunjuk</p>
     <p>Di JavaScript, kita bisa menambahkan kode komentar</p>
-        <pre><code>// Komentar satu baris
+    <pre><code>// Komentar satu baris
 document.writeln("&lt;p&gt;Halo dunia!&lt;/p&gt;");
 /*
 Komentar ini bisa lebih dari satu baris
 coba saja
 */
 document.writeln("&lt;p&gt;Halo dunia!&lt;/p&gt;");</code></pre>
+    <h1>Tipe Data Number</h1>
+    <h2>Tipe Data Number</h2>
+    <p>Tipe data boolean adalah tipe data yang berisikan data kebenaran, artinya hanya ada dua data, benar dan salah (yes atau no)</p>
+    <p>Benar di representasikan dengan kata kunci true, dan salah direpresentasikan dengan kata kunci false</p>
+    <p>Walaupun tipe data boolean merupakan tipe data yang sangat sederhana, tapi tipe data boolean akan banyak digunakan di berbagai fitur pemrograman</p>
+    <pre><code>document.writeln(100);
+document.writeln("&lt;/br&gt;");
+document.writeln(100.100);</code></pre>
+    <div class="output">
+      100<br>
+      100.1
+    </div>
+    <h2>Number Notation</h2>
+    <p>JavaScript mendukung number notation, defaultnya ada basis 10, JavaScript juga mendukung binary, hexadecimal dan octal</p>
+    <p>Hexadecimal : 0xFF</p>
+    <p>Binary : 0b10101</p>
+    <p>Octal : 0o10</p>
+    <h1>Tipe Data Boolean</h1>
+    <h2>Tipe Data Boolean</h2>
+    <p>Tipe data boolean adalah tipe data yang berisikan data kebenaran, artinya hanya ada dua data, benar dan salah (yes atau no)</p>
+    <p>Benar di representasikan dengan kata kunci true, dan salah direpresentasikan dengan kata kunci false</p>
+    <p>Walaupun tipe data boolean merupakan tipe data yang sangat sederhana, tapi tipe data boolean akan banyak digunakan di berbagai fitur pemrograman</p>
+
+    <h1>Tipe Data String</h1>
+    <h2>Tipe Data String</h2>
+    <p>Tipe data string atau text adalah tipe data yang berisikan kumpulan kosong atau lebih karakter</p>
+    <p>Sebelumnya kita sudah pernah menggunakan string ketika membuat program hello world.</p>
+    <p>Di JavaScript, untuk membuat data dengan tipe string, kita perlu menggunakan “ (petik dua) atau ‘ (petik satu) sebelum dan setelah isi text nya</p>
+    <p>kode string : </p>
+    <pre><code>document.writeln("Kemas M. Yunus");
+document.writeln("&lt;/br&gt;");
+document.writeln("ini adalah baris kedua");</code></pre>
+    <div class="output">
+      Kemas M. Yunus
+      <br>
+      ini adalah baris kedua
+    </div>
+
+    <h2>Menambah String</h2>
+    <p>Data string bisa digabung menggunakan operator + (plus)</p>
+    <p>Kode : </p>
+    <pre><code>document.writeln("Nama : " + "Kemas");
+document.writeln("&lt;/br&gt;");
+document.writeln("github : " + "escfromnonsense");</code></pre>
+    <div class="output">
+      Nama : Kemas
+      <br>
+      github : escfromnonsense
+    </div>
+
+    <h2>Escape Sequence</h2>
+    <p>JavaScript mendukung escape sequence di string. Escape sequence merupakan karakter khusus,
+seperti ENTER, TAB, " (kutip dua), dan lain-lain. Berikut contoh escape sequence yang didukung
+oleh JavaScript di data string</p>
+    <table>
+      <tr>
+        <td>\n</td>
+        <td>Enter</td>
+      </tr>
+      <tr>
+        <td>\t</td>
+        <td>TAB</td>
+      </tr>
+      <tr>
+        <td>\'</td>
+        <td>'</td>
+      </tr>
+      <tr>
+        <td>\"</td>
+        <td>"</td>
+      </tr>
+      <tr>
+        <td>\\</td>
+        <td>\</td>
+      </tr>
+    </table>
+    <p>Kode : </p>
+    <pre><code>document.writeln("&lt;textarea cols='100' rows='10'&gt;")
+document.writeln("Kemas \nMuhammad \nYunus")
+document.writeln("\\javascript\\belajar-javascript.html")
+document.writeln("\"escfromnonsense\"")
+document.writeln("\'Belajar JavaScript\'")
+document.writeln("&lt;/textarea&gt;")</code></pre>
+    <div class="output">
+      Kemas<br>Muhammad<br>Yunus<br>
+      \javascript\belajar-javascript.html<br>
+      "escfromnonsense"<br>
+      'Belajar JavaScript'
+    </div>
+    <h1>Variable</h1>
+    <p>kode tanpa variabel</p>
+    <pre><code>document.writeln("Kemas Muhammad Yunus")
+document.writeln("&lt;/br&gt;")
+document.writeln("Kemas Muhammad Yunus")
+document.writeln("&lt;/br&gt;")
+document.writeln("Kemas Muhammad Yunus")
+document.writeln("&lt;/br&gt;")</code></pre>
+    <h2>Variable</h2>
+    <p>Variable adalah tempat untuk menyimpan data</p>
+    <p>Dengan menyimpan data di variable, kita bisa menggunakannya lagi dengan menyebutkan nama variable nya</p>
+    <p>Untuk membuat variable di JavaScript, kita bisa menggunakan kata kunci var diikuti dengan nama variable nya</p>
+    <p>JavaScript adalah dynamic language, artinya variable di JavaScript tidak terpaku harus menggunakan satu tipe data, kita bisa mengubah-ubah tipe data di variable yang sama</p>
+    <pre><code>var fullName;</code></pre>
+    <h2>Mengubah Value di Variable</h2>
+    <p>Setelah variable di deklarasikan, kita bisa mengubah value atau nilai di dalam variable tersebut</p>
+    <p>Untuk mengubahnya, kita bisa menggunakan perintah nama variable diikuti dengan tanda = (sama dengan) lalu diikuti dengan value atau nilai nya</p>
+    <p>kode mengubah value di variable :</p>
+    <pre><code>var fullName;
+fullName = "Kemas M. Yunus";
+fullName = "Kousaka Reina";
+fullName = "Minato Yukina";</code></pre>
+    <h2>Membuat Variable Langsung Dengan Value</h2>
+    <p>Di JavaScript juga kita bisa mendeklarasikan sebuah variable, langsung dengan isi value nya</p>
+    <p>Caranya kita bisa menggunakan kata kunci var, diikuti nama variable, lalu diikuti dengan tanda = (sama dengan), dan di ikuti dengan value atau nilai nya</p>
+    <p>kode variable dan value</p>
+    <pre><code>var firstName = "Kemas";
+var lastName = "M. Yunus";
+var fullName = "Kemas" + " " +"M. Yunus"</code></pre>
+    <h2>Mengakses Variable</h2>
+    <p>Salah satu keuntungan menggunakan variable adalah variable bisa digunakan kembali</p>
+    <p>Hal ini akan mempermudah ketika membutuhkan data yang sama berkali-kali</p>
+    <p>Untuk mengakses variable, kita cukup menyebutkan nama variable nya</p>
+
+    <p>kode mengakses variable :</p>
+    <pre><code>var firsName = "Kemas M. Yunus";
+document.writeln(firstName);
+document.writeln("&lt;/br&gt;");
+document.writeln(firstName);
+document.writeln("&lt;/br&gt;");</code></pre>
+    <h2>Kata Kunci let dan const</h2>
+    <p>Sebelum tahun 2015, kata kunci untuk membuat variable hanya bisa menggunakan kata kunci var</p>
+    <p>Namun tahun 2015 sejak versi ECMAScript 2015, diperkenalkan kata kunci baru untuk membuat variable, let dan const</p>
+    <p>JavaScript sekarang tidak direkomendasikan lagi menggunakan kata kunci var untuk membuat variable, namun diganti dengan let, hal ini dikarenakan ada masalah dari desain awal var (akan kita bahas di chapter tersendiri)</p>
+    <p>kode variable let</p>
+    <pre><code>let fistName = "Kemas M. Yunus";
+document.writeln(firsName);
+document.writeln("&lt;/br&gt;");
+document.writeln(firsName);
+document.writeln("&lt;/br&gt;");
+document.writeln(firsName);</code></pre>
+    <h2>Kata Kunci const</h2>
+    <p>Kata kunci let itu seperti kata kunci var, dimana data di variable tersebut bisa diubah-ubah sesuka kita</p>
+    <p>Sedangkan kata kunci const berbeda, ketika sebuah variable sudah diisi di variable const, maka variable tersebut tidak bisa diubah lagi value nya</p>
+    <p>Variable sejenis ini kadang dibilang juga constant</p>
+    <p>kode variable const</p>
+    <pre><code>const application = "Belajar JavaScript Dasar";
+application = "Tidak Mau Belajar"; //Error;</code></pre>
+    <h1>Operator Matematika</h1>
+    <h2>Operator Matematika</h2>
+    <p>JavaScript mendukung banyak sekali operator Matematika untuk tipe data Number, seperti :</p>
+    <p>Operator Aritmatika</p>
+    <p>Operator Augmented Assignments</p>
+    <p>Operator Unary</p>
+    <p>Dan lain-lain</p>
+
+    <h2>Operator Aritmatika</h2>
+    <table>
+      <tr>
+        <th>Operator</th>
+        <th>Keterangan</th>
+      </tr>
+      <tr>
+        <td>+</td>
+        <td>Pertambahan</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>Pengurangan</td>
+      </tr>
+        <tr>
+        <td>*</td>
+        <td>Perkalian</td>
+      </tr>
+      <tr>
+        <td>**</td>
+        <td>Exponensial</td>
+      </tr>
+      <tr>
+        <td>/</td>
+        <td>Pembagian</td>
+      </tr>
+      <tr>
+        <td>%</td>
+        <td>Sisa Bagi</td>
+      </tr>
+    </table>
+    <p>kode operator aritmatika</p>
+    <pre><code>let result = 1 + 2;
+document.writeln("&lt;p&gt; 1 + 2 = " + result + "&lt;/p&gt;");
+let originalResult = result;
+
+result = result - 1;
+document.writeln("&lt;p&gt;" + originalResult + " - 1 = " + result + "&lt;/p&gt;");
+originalResult = result;
+
+result = result * 2;
+document.writeln("&lt;p&gt;" + originalResult + " * 2 = " + result + "&lt;/p&gt;");
+originalResult = result;
+    </code></pre>
+    <div class="output">
+      <p>1 + 2 = 3</p>
+      <p>3 - 1 = 2</p>
+      <p>2 * 2 = 4</p>
+    </div>
+
+    <h2>Operator Augmented Assignments</h2>
+    <table>
+      <tr>
+        <th>Operator Matematika</th>
+        <th>Operator Augmented Assigments</th>
+      </tr>
+      <tr>
+        <td>result = result + 10</td>
+        <td>result += 10</td>
+      </tr>
+      <tr>
+        <td>result = result - 10</td>
+        <td>result -= 10</td>
+      </tr>
+      <tr>
+        <td>result = result * 10</td>
+        <td>result *= 10</td>
+      </tr>
+      <tr>
+        <td>result = result ** 10</td>
+        <td>result **= 10</td>
+      </tr>
+      <tr>
+        <td>result = result / 10</td>
+        <td>result /= 10</td>
+      </tr>
+      <tr>
+        <td>result = result % 10</td>
+        <td>result %= 10</td>
+      </tr>
+    </table>
+    <p>kode operator augmented assigments</p>
+    <pre><code>let result = 10;
+result += 10;
+document.writeln("&lt;p&gt;"+"&lt;/p&gt;");
+
+result -= 10;
+document.writeln("&lt;p&gt;"+"&lt;/p&gt;");
+
+result *= 10;
+document.writeln("&lt;p&gt;"+"&lt;/p&gt;");</code></pre>
+
+    <h2>Operator Unary</h2>
+    <table>
+      <tr>
+        <th>Operator</th>
+        <th>Keterangan</th>
+      </tr>
+      <tr>
+        <td>+</td>
+        <td>Menandakan nilai positif</td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td>Menandakan nilai negatif</td>
+      </tr>
+      <tr>
+        <td>++</td>
+        <td>Increment, menaikkan 1 angka</td>
+      </tr>
+      <tr>
+        <td>--</td>
+        <td>Decrement, menurunkan 1 angka</td>
+      </tr>
+    </table>
+
+    <p>kode operator unary</p>
+    <pre><code>let result = +1;
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");
+
+result--;
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");
+
+result++;
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");
+
+result = -result;
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");
+    </code></pre>
+    <div class="output">
+1<br>
+0<br>
+1<br>
+-1
+    </div>
+
+    <h1>Operator Perbandingan</h1>
+    <h2>Operasi Perbandingan</h2>
+    <p>Operasi perbandingan adalah operasi untuk membandingkan dua buah data</p>
+    <p>Operasi perbandingan adalah operasi yang menghasilkan nilai boolean (benar atau salah)</p>
+    <p>Jika hasil operasinya adalah benar, maka nilainya adalah true</p>
+    <p>Jika hasil operasinya adalah salah, maka nilainya adalah false</p>
+
+    <h2>Operator Perbandingan</h2>
+    <table>
+      <tr>
+        <th>Operator</th>
+        <th>Keterangan</th>
+      </tr>
+      <tr>
+        <td>&gt;</td>
+        <td>Lebih Dari</td>
+      </tr>
+      <tr>
+        <td>&lt;</td>
+        <td>Kurang Dari</td>
+      </tr>
+      <tr>
+        <td>&gt;=</td>
+        <td>Lebih Dari Sama Dengan</td>
+      </tr>
+      <tr>
+        <td>&lt;=</td>
+        <td>Kurang Dari Sama Dengan</td>
+      </tr>
+      <tr>
+        <td>==</td>
+        <td>Sama Dengan</td>
+      </tr>
+      <tr>
+        <td>===</td>
+        <td>Sama Dengan dan Sama Tipe</td>
+      </tr>
+      <tr>
+        <td>!=</td>
+        <td>Tidak Sama Dengan</td>
+      </tr>
+      <tr>
+        <td>!==</td>
+        <td>Tidak Sama Dengan dan Tidak Sama Tipe</td>
+      </tr>
+    </table>
+    <p>Kode operasi perbandingan</p>
+    <pre><code>let result = 5 == "5";
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");
+
+result = 5 === "5";
+document.writeln("&lt;p&gt;" + result + "&lt;/&gt;");
+
+result = 5 &gt; 10;
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");
+
+result = 5 &lt; 10;
+document.writeln("&lt;p&gt;" + result + "&lt;/p&gt;");</code></pre>
+    <div class="output">
+      true<br>
+      false<br>
+      false<br>
+      true
+    </div>
+
+    <h1>Operator Logika</h1>
+    <h2>Operator Logika</h2>
+    <p>Operator logika adalah operator yang punya dua buah data boolean</p>
+    <p>Hasil dari operator logika adalah boolean lagi</p>
+    <table>
+      <tr>
+        <th>Operator</th>
+        <th>Keterangan</th>
+      </tr>
+      <tr>
+        <td>&&</td>
+        <td>Dan</td>
+      </tr>
+      <tr>
+        <td>||</td>
+        <td>Atau</td>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>Kebalikan</td>
+      </tr>
+    </table>
+
+    <h2>Operator &&</h2>
+    <table>
+      <tr>
+        <th>Nilai 1</th>
+        <th>Operator</th>
+        <th>Nilai 2</th>
+        <th>Hasil</th>
+      </tr>
+      <tr>
+        <td>true</td>
+        <td>&&</td>
+        <td>true</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>true</td>
+        <td>&&</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>&&</td>
+        <td>true</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>&&</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+    </table>
+    <h2>Operator ||</h2>
+    <table>
+      <tr>
+        <th>Nilai 1</th>
+        <th>Operator</th>
+        <th>Nilai 2</th>
+        <th>Hasil</th>
+      </tr>
+      <tr>
+        <td>true</td>
+        <td>||</td>
+        <td>true</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>true</td>
+        <td>||</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>||</td>
+        <td>true</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>||</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+    </table>
+
+    <h2>Operator Unary !</h2>
+    <table>
+      <tr>
+        <th>Nilai</th>
+        <th>Operator</th>
+        <th>Hasil</th>
+      </tr>
+      <tr>
+        <td>true</td>
+        <td>!</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>!</td>
+        <td>true</td>
+      </tr>
+    </table>
+
+    <p>kode operator logika</p>
+    <pre><code>const nilaiUjian = 70;
+const nilaiAbsensi = 70;
+
+const lulusUjian = nilaiUjian > 75;
+const lulusAbsensi = nilaiAbsensi >75;
+
+const lulus = lulusUjian && lulusAbsensi;
+
+document.writeln("&lt;p&gt;" + lulus + "&lt;/p&gt;");</code></pre>
+    <div class="output">
+      false
+    </div>
+
+    <h1>Console</h1>
+    <h2>Console</h2>
+    <p>JavaScript memiliki fitur untuk melakukan logging bernama Console</p>
+    <p>Loggin adalah mekanisme yang biasanya dilakukan oleh programmer untuk menampilkan informasi dari aplikasi yang sedang berjalan, tanpa harus menggangu alur kerja aplikasi dan juga interaksi user</p>
+    <p>Untuk melakukan ini, kita bisa menggunakan fitur Console di JavaScript</p>
+    <p>Untuk menggunakan Console, kita cukup gunakan perintah console di kode JavaScript</p>
+
+    <h2>Console Method</h2>
+    <table>
+      <tr>
+        <th>Console Method</th>
+        <th>Keterangan</th>
+      </tr>
+      <tr>
+        <td>console.info(...)</td>
+        <td>Memberitahu informasi</td>
+      </tr>
+      <tr>
+        <td>console.warn(...)</td>
+        <td>Memberitahu informasi peringatan</td>
+      </tr>
+      <tr>
+        <td>console.error(...)</td>
+        <td>Memberitahu informasi error</td>
+      </tr>
+      <tr>
+        <td>console.tablet(...)</td>
+        <td>Memberitahu informasi dalam bentuk table</td>
+      </tr>
+    </table>
+
+    <p>kode console</p>
+    <pre><code>console.info("Halo Dunia Penuh Derita!");</code></pre>
+
+    <p>Inspect Element di Google Chrome</p>
+    <img src="../image/inspect-element.png">
+
+    <h1>String Template</h1>
+    <h2>String Template</h2>
+    <p>Kita sudah tahu bahwa untuk menambahkan string dengan data lain, kita bisa menggunakan operator + (plus)</p>
+    <p>Namun pada kasus tertentu, penggunaan operator + (plus) sangat menyulitkan, aalagi jika dalam jumlah yang banyak</p>
+    <p>JavaScript memiliki fitur yang bernama String Template, dimana kita bisa mensubtitusi data dari luar String ke dalam String seperti mengambil data variable, atau bahkan melakukan operasi matematika</p>
+    <p>Untuk menggunakan String Template, cara pembuatan Stringnya harus menggunakan ` (backtick), bukan ' (petik satu) atau " (petik dua)</p>
+
+    <p>kode string template</p>
+    <pre><code>const template = `Name : `;</code></pre>
+
+    <p>kode mengambil variable</p>
+    <pre><code>const name = "Kemas M. Yunus";
+const template = `Name = ${name}`;
+
+document.writeln(template);
+    </code></pre>
+    <div class="output">
+      Name = Kemas M. Yunus
+    </div>
+    <p>expression di string template</p>
+    <pre><code>const name = "Kemas M, Yunus";
+const value = 80;
+
+const template = `Name : ${name} Lulus : ${value > 75}`;
+document.writeln(template);</code></pre>
+    <div class="output">Name : Kemas M, Yunus Lulus : true</div>
+    <h2>Multiline String</h2>
+    <p>string template juga bisa digunakan untuk membuat string multiline</p>
+    <p>kita cukup dambahkan enter di textnya</p>
+    <p>kode multiline string</p>
+    <pre><code>let multiLIneString = `
+Nama saya adalah Kemas M. Yunus
+saya adalah lulusan d3 teknik informatika
+di salah satu perguruan tinggi di banjarmasin`;
+
+document.writeln("&lt;pre&gt;");
+document.writeln(multiLineSting);
+document.writeln("&lt;/pre&gt;");</code></pre>
+    <div class="output">
+      <br>
+      Nama saya adalah Kemas M. Yunus<br>
+      saya adalah lulusan d3 teknik informatika<br>
+      di salah satu perguruan tinggi di banjarmasin
+    </div>
+
+    <h1>Konversi String dan Number</h1>
+    <h2>Konversi String dan Number</h2>
+    <p>saat membuat aplikasi, kadang kita input dari pengguna selalu dalam bentuk String</p>
+    <p>Sedangkan kita ingin mengelola datanya dalam bentuk Number</p>
+    <p>Maka sangat disarankan untuk melakukan konversi tipe data</p>
+    <p>kode masalah danpa konversi</p>
+    <pre><code>const value1 = "1"
+const value2 = 1;
+const sum = value1 + value2;
+
+document.writeln(`&lt;p&gt;${sum}&lt;/p&gt;`);</code></pre>
+    <div class="output">11</div>
     
+    <h2>Melakukan Konversi String dan Number</h2>
+    <table>
+      <tr>
+        <th>Function</th>
+        <th>Keterangan</th>
+      </tr>
+      <tr>
+        <td>parseInt(String)</td>
+        <td>Mengkonversi dari String ke Number (bilangan bulat)</td>
+      </tr>
+      <tr>
+        <td>parseFloat(String)</td>
+        <td>Mengkonversi dari String ke number (bilangan pecahan)</td>
+      </tr>
+      <tr>
+        <td>Number(string)</td>
+        <td>Mengkonversi dari string ke number (bilangan bulat atau pecahan)</td>
+      </tr>
+      <tr>
+        <td>number.toString()</td>
+        <td>mengkonversi dari number ke String</td>
+      </tr>
+    </table>
+      <p>kode konversi string ke number</p>
+      <pre><code>document.writeln(`&lt;p&gt;${parseInt("1.1")}&lt/p&gt;`) // 1
+document.writeln(`&lt;p&gt;${parseFloat("1.1")}&lt/p&gt;`) // 1.1
+document.writeln(`&lt;p&gt;${Number("1.1")}&lt/p&gt;`) // 1.1</code></pre>
+      <div class="output">
+        1<br>
+        1.1<br>
+        1.1
+      </div>
   </main>
 </body>
 </html>
