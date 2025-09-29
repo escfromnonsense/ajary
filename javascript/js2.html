@@ -871,15 +871,153 @@ document.writeln(`&lt;p&gt;${sum}&lt;/p&gt;`);</code></pre>
         <td>mengkonversi dari number ke String</td>
       </tr>
     </table>
-      <p>kode konversi string ke number</p>
-      <pre><code>document.writeln(`&lt;p&gt;${parseInt("1.1")}&lt/p&gt;`) // 1
+    <p>kode konversi string ke number</p>
+    <pre><code>document.writeln(`&lt;p&gt;${parseInt("1.1")}&lt/p&gt;`) // 1
 document.writeln(`&lt;p&gt;${parseFloat("1.1")}&lt/p&gt;`) // 1.1
 document.writeln(`&lt;p&gt;${Number("1.1")}&lt/p&gt;`) // 1.1</code></pre>
+    <div class="output">
+      1<br>
+      1.1<br>
+      1.1
+    </div>
+    <h2>NaN</h2>
+    <p>Bagaimana jika ternyata data string yang kita coba konversi ke number bukanlah data yang valid?</p>
+    <p>Jika data String yang kita coba lakukan konversi bukanlah data valid, maka hasil dari konversi tersebut adalah NaN (Not a Number)</p>
+    <p>NaN adalah number spesial yang menyebutkan bahwa ini bukanlah number</p>
+    <p>Jika NaN dioperasikan dengan data number lainnya, maka hasilnya akan menjadi NaN lagi</p>
+
+    <p>kode NaN</p>
+    <pre><code>document.writeln(`&lt;p&gt;${parseInt("salah")}&lt;/p&gt;`) // NaN
+document.writeln(`&lt;p&gt;${parseFloat("1.1text")}&lt;/p&gt;`) // 1.1
+
+// Number() tidak akan mentolelir kesalahan pada data
+document.writeln(`&lt;p&gt;${Number("1.1text")}&lt;/p&gt;`) //NaN
+document.writeln(`&lt;p&gt;${Number("1x")}&lt;/p&gt;`) //NaN
+document.writeln(`&lt;p&gt;${Number("bukan number")}&lt;/p&gt;`) //NaN</code></pre>
+    <div class="output">
+      <p>NaN</p>
+      <p>1.1</p>
+      <p>NaN</p>
+      <p>NaN</p>
+      <p>NaN</p>
+    </div>
+      <p>kode operasi pada nan</p>
+      <pre><code>const value1 = Number("salah"); // NaN
+const value2 = 100;
+const sum = value1 + value2; // NaN
+
+document.writeln(`&lt;p&gt;${sum}&lt;/p&gt;`);
+      </code></pre>
       <div class="output">
-        1<br>
-        1.1<br>
-        1.1
+        <p>NaN</p>
       </div>
+
+      <h2>isNaN() Function</h2>
+      <p>Kadang kita ingin mengecek apakah sebuah number itu NaN atau bukan</p>
+      <p>Untuk melakukan pengecekan tersebut, kita bisa menggunakan function isNaN(number)</p>
+      <p>Hasilnya adalah berupa data boolean, true jika NaN, false jika bukan</p>
+
+      <h1>Tipe Data Array</h1>
+      <h2>Tipe Data Array</h2>
+      <p>Array adalah tipe data yang berisikan kumpulan data</p>
+      <p>Array di JavaScript memiliki sifat dinamis, artinya datanya bisa bertambah dengan sendirinya saat kita memasukkan data ke dalam Array</p>
+
+      <h2>Diagram Array</h2>
+      <table>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <p>kode membuat array</p>
+      <pre><code>let arrayKosong = [];
+let arrayNama = ["Kemas", "Muhammad", "Yunus"];</code></pre>
+      <h2>Cara Kerja Array</h2>
+      <p>Setiap data di Array akan disimpan dalam posisi berurutan, dimana urutan pertama dimulai dari nomor 0</p>
+      <p>Setiap kata menambahkan data ke Array, otomatis data akan disimpan di urutan terakhir</p>
+      <p>Urutan di Array, kita sebut sebagai index</p>
+
+      <p>cara kerja array</p>
+      <table>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        6
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <img src="../image/cara-kerja-array.png">
+
+      <p>kode menambah Array</p>
+      <pre><code>const names = [];
+names.push("Kemas");
+names.push("Muhammad", "Yunus");
+document.writeln(names);</code></pre>
+      <div class="output">Kemas,Muhammad,Yunus</div>
+
+      <h2>Operasi di Array</h2>
+      <table>
+        <tr>
+          <th>Operasi</th>
+          <th>Keterangan</th>
+        </tr>
+        <tr>
+          <td>array.push(value)</td>
+          <td>Menambah data ke Array</td>
+        </tr>
+        <tr>
+          <td>array.length</td>
+          <td>Untuk mendapatkan panjang Array</td>
+        </tr>
+        <tr>
+          <td>array[index]</td>
+          <td>Mendapatkan data di posisi index</td>
+        </tr>
+        <tr>
+          <td>array[index] = value</td>
+          <td>Mengubah data di posisi index</td>
+        </tr>
+        <tr>
+          <td>delete array[index]</td>
+          <td>Menghapus data di posisi index, namun index tidak bergeser</td>
+        </tr>
+      </table>
+      <p>kode operasi di array</p>
+      <pre><code>const names = [];
+names.push("Kemas");
+names.push("Muhammad", "Yunus");
+
+document.writeln(`&lt;p&gt;${names}&lt;/p&gt;`);
+names[0] = "K";
+document.writeln(`&lt;p&gt;${names}&lt;/p&gt;`);
+document.writeln(`&lt;p&gt;${names.length}&lt;/p&gt;`);</code></pre>
+      <div class="output">
+        <p>Kemas,Muhammad,Yunus</p>
+        <p>K,Muhammad,Yunus</p>
+        <p>3</p>
+      </div>
+
+      <h2>Perlu Diingat</h2>
+      <p>Data di dalam Array tidak ada batasannya harus data apa</p>
+      <p>Jadi kita bisa memasukkan data apapun ke dalam Array</p>
+      <p>Bahkan kita juga bisa memasukkan Array ke dalam Array jika kita mau</p>
   </main>
 </body>
 </html>
