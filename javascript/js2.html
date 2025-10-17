@@ -373,6 +373,10 @@ document.writeln("Kemas Muhammad Yunus")
 document.writeln("&lt;/br&gt;")</code></pre>
     <h2>Variable</h2>
     <p>Variable adalah tempat untuk menyimpan data</p>
+    <div class="note">penulisan pakai camel case dan angka tidak boleh diawal.
+      inisialisasi vs deklarasi :
+      proses memberitahu kompiler tentang keberadaan suatu objek pemrograman (seperti variabel atau fungsi) dengan menentukan tipe datanya dan namanya. Sementara itu, inisialisasi adalah proses memberikan nilai awal pada objek yang sudah dideklarasikan tersebut. 
+    </div>
     <p>Dengan menyimpan data di variable, kita bisa menggunakannya lagi dengan menyebutkan nama variable nya</p>
     <p>Untuk membuat variable di JavaScript, kita bisa menggunakan kata kunci var diikuti dengan nama variable nya</p>
     <p>JavaScript adalah dynamic language, artinya variable di JavaScript tidak terpaku harus menggunakan satu tipe data, kita bisa mengubah-ubah tipe data di variable yang sama</p>
@@ -480,6 +484,7 @@ originalResult = result;
     </div>
 
     <h2>Operator Augmented Assignments</h2>
+    <p>itu sebenarnya cuma cara menyingkat perhitungan pada sebuah variabel. Jadi kalau kita ngitung sesuatu pakai variabel, hasilnya langsung dimasukin lagi ke variabel yang sama. Dengan begitu, kita nggak perlu nulis kode yang panjang-panjang, cukup pakai bentuk singkatnya saja.</p>
     <table>
       <tr>
         <th>Operator Matematika</th>
@@ -522,6 +527,7 @@ result *= 10;
 document.writeln("&lt;p&gt;"+"&lt;/p&gt;");</code></pre>
 
     <h2>Operator Unary</h2>
+    <p>Operator unary itu adalah operator yang hanya butuh satu data saja untuk bekerja. Kalau biasanya tanda tambah + atau tanda kurang - dipakai untuk menghubungkan dua angka, misalnya 5 + 3, nah kalau unary cukup dipakai di depan satu angka. Contohnya -5 artinya angka lima tapi bernilai negatif, sedangkan +5 artinya angka lima bernilai positif. Sebenarnya setiap angka yang kita tulis di program otomatis dianggap positif, jadi kalau kamu menulis 7, itu sama saja dengan +7. Jadi, operator unary bisa dibilang adalah tanda yang langsung melekat ke sebuah angka untuk memberi arti tertentu, tanpa perlu angka lain.</p>
     <table>
       <tr>
         <th>Operator</th>
@@ -1018,6 +1024,1366 @@ document.writeln(`&lt;p&gt;${names.length}&lt;/p&gt;`);</code></pre>
       <p>Data di dalam Array tidak ada batasannya harus data apa</p>
       <p>Jadi kita bisa memasukkan data apapun ke dalam Array</p>
       <p>Bahkan kita juga bisa memasukkan Array ke dalam Array jika kita mau</p>
+
+      <div class="note">
+        pokoknya kalau return hanya menjankan kondisi pertama kali terpenuhi, walaupun didalam perulangan, kalau ketemu return, akan selesai.
+      </div>
+
+      <h1>Tipe Data Object</h1>
+      <h2>Associative Array</h2>
+      <p>Di bahasa pemrograman lain seperti PHP, kita bisa menggunakan index berupa tipe data lain selain number, misal string</p>
+      <p>Fitur ini biasanyadisebut associative array atau bash</p>
+      <p>di javascript associative array tidak didukung</p>
+      <p>jika kita memaksa memasukkan data bukan number di index array, maka javascript akan merubah tipe data Array tersebut menjadi object, dan ini bisa berbahaya, karena beberapa operasi di array mungkin bisa berubah hasilnya.</p>
+
+      <h2>Tipe Data Object</h2>
+      <p>tipe data object adalah tipe data yang mirip dengan tipe data Array</p>
+      <p>yang membedakan adalah index pada tipe data object bisa menggunakan string</p>
+      <p>index di object biasanya disebut attributes atau properties, bukan index</p>
+      <p>kode membuat object kosong :</p>
+      <pre><code>const orang = {};</code></pre>
+      <p>kode mengubah property di object</p>
+      <pre><code>const orang = {};
+// Menambah atau mengubah
+orang["nama"] = "Kemas Muhammad Yunus";
+orang["kelas"] = "XI TKJ";
+orang["umur"] = 20;
+
+// Menghapus
+delete orang["umur"];
+
+console.table(orang);</code></pre>
+      <p>kode membuat object dengan properties</p>
+      <pre><code>const orang = {
+  nama: "Kemas Muhammad Yunus",
+  kelas: "XI TKJ",
+  umur: 20
+};
+console.table(orang);</code></pre>
+      <p>kode mengakses property object</p>
+      <pre><code>const orang = {
+  nama: "Kemas Muhammad Yunus",
+  kelas: "XI TKJ",
+  umur: 20
+};
+console.info(`Nama: ${orang.nama}`)
+console.info(`Kelas: ${orang.kelas}`)
+console.info(`Umur: ${orang.umur}`)
+</code></pre>
+      <h1>If Expression</h1>
+      <h2>If Expression</h2>
+      <p>Dalam JavaScript, if adalah salah satu kata kunci yang digunakan untuk percabangan</p>
+      <p>Percabangan artinya kita bisa mengeksekusi kode program tertentu ketika suatu kondisi terpenuhi</p>
+      <p>Hampir di semua bahasa pemrograman mendukung if expression</p>
+
+      <p>kode if expression</p>
+      <pre><code>const examValue = 90;
+if(examValue > 80){
+  document.writeln("<p>Good Job</p>");
+}</code></pre>
+      <p></p>
+      <h2>Else Expression</h2>
+      <p>Block if akan dieksekusi ketika kondisi if bernilai true</p>
+      <p>Kadang kita ingin melakukan eksekusi program tertentu jika kondisi if bernilai false</p>
+      <p>Hal ini bisa dilakukan menggunakan else expression</p>
+      <p>kode else expression</p>
+      <pre><code>const examValue = 90;
+if(examValue > 80){
+  document.writeln("<p>Good Job</p>");
+} else{
+  document.writeln("<p>Try Again Next Year</p>");
+}</code></pre>
+      <p></p>
+      <h2>Else If Expression</h2>
+      <p>kadang dalam if, kita butuh membuat beberapa kondisi</p>
+      <p>Kadang kasus seperti ini di JavaScript kita bisa menggunakan Else If expression</p>
+      <p>kode else if expression</p>
+      <pre><code>const examValue = 90;
+if(examValue > 80){
+  document.writeln("<p>Good Job</p>");
+} else if (examValue > 60){
+  document.writeln("&lt;p&gt;Not Bad&lt;/p&gt;");
+} else{
+  document.writeln("<p>Try Again Next Year</p>");
+}</code></pre>      
+      <p></p>
+      <h1>Popup</h1>
+      <h2>Alert, Prompt dan confirm</h2>
+      <p>Javascript memiliki fitur yang bernama alert, prompt dan confirm</p>
+      <p>Alert digunakan untuk memberi peringatan berupa popup text di brower</p>
+      <p>prompt digunakan untuk eminta input string dari pengguna browser dalam bentuk popup input text</p>
+      <p>sedangkan confirm digunakan untuk meminta input boolean dari pengguna browser dalam bentuk popup input pilihan</p>
+      <p>kode alert</p>
+      <pre><code>alert("Halo dunia penuh derita!");</code></pre>
+      <p>hasil alert</p>
+      <img src="../image/alert.png">
+      <p>kode prompt</p>
+      <pre><code>const name = prompt("Siapa Nama Anda?");
+alert(`Halo ${name}`);
+      </code></pre>
+      <p>hasil prompt</p>
+      <img src="../image/prompt-input.png">
+
+      <p>kode confirm</p>
+      <pre><code>const masuk = confirm("anda yakin mau masuk?");
+if(masuk){
+  const name = prompt("Siapa nama anda?");
+  alert(`halo ${name}`);
+} else{
+  alert("dadah");
+}
+      </code></pre>
+      <p>hasil confirm</p>
+      <img src="../image/confirm.png">
+
+      <h1>Undifined</h1>
+      <p>undifined adalah sebuah kata kunci di javascript</p>
+      <p>undifined adalah sebuah tipe data</p>
+      <p>sebuah variable yang belum ditambahkan nilai, maka artinya variable tersebut merupakan tipe undifined</p>
+      <p>kadang untuk programmer javascript pemula, undifined ini memang agak sedikit membingungkan</p>
+      <p>undifined itu berbeda dengan null di bahasa pemrograman lain.</p>
+
+      <p>kode undifined variable</p>
+      <pre><code>let name;
+if(name === UNDIFINED){
+  document.writeln("ini Undifined");
+} else{
+  document.writeln("Ini definide");
+}
+      </code></pre>
+      <p>kode undifined array value</p>
+      <pre><code>const names = ["kemas", "Muhammad"];
+if(names[2] === undefined){
+  document.writeln("Halo Tanpa nama");
+} else {
+  document.writeln(`Halo ${names[2]}`);
+}
+      </code></pre>
+      <p>kode undefined object property</p>
+      <pre><code>let person = {};
+if(person.name === undefined){
+  document.writeln("Halo tanpa nama");
+} else {
+  document.writeln(`Halo ${person.name}`);
+}</code></pre>
+      <h1>Null</h1>
+      <p>null merupakan representasi data kosong</p>
+      <p>null berbeda dengan undefined, null berarti variable sudah ditambahkan value nya, hanya saja value nya null</p>
+      <p>sedangkan undefined adalah variable belum ditambahkan value apapun</p>
+      <pre><code>let fistName = null;
+if(firstName === undefined){
+  document.writeln("Halo, undefined");
+} else if (firstName === null){
+  document.writeln("Halo, Null");
+} else {
+  document.writeln(`Halo ${firstName}`);
+}
+      </code></pre>
+      <h1>Switch Expression</h1>
+      <h2>Switch Statement</h2>
+      <p>Kadang kita hanya butuh menggunakan kondisi sederhana di if statement, seperti hanya menggunakan perbandingan</p>
+      <p>switch adalah statement percabangan yang sama dengan if, namun lebih sederhana cara pembuatannya</p>
+      <p>kondisi di switch statement hanya untuk perbandingan ==</p>
+      <p>kode switch statement</p>
+      <pre><code>switch(nilai){
+  case "A":
+    document.writeln("Wow, Anda lulus dengan baik");
+    break;
+  case "B":
+  case "C":
+    document.writeln("Anda lulus");
+    break;
+  case "D":
+    document.writeln("Anda tidak lulus");
+  default:
+    document.writeln("Mungkin anda salah jurusan");
+    break;
+}</code></pre>
+
+    <h1>Operator typeof</h1>
+    <p>typeof merupakan operator yang bisa kita gunakan untuk melihat tipe data sebuah value atau variable</p>
+    <p>karena javascript merupakan dynamic language, jadi kadang kita perlu mengecek tipe data sebuah value atau variable menggunakan operator typeof</p>
+    <p>hasil dari operator type of adalah string tipe datanya.</p>
+    <table>
+      <tr>
+        <th>Type</th>
+        <th>Hasil Operator typeof</th>
+      </tr>
+      <tr>
+        <td>Undefined</td>
+        <td>"undefined"</td>
+      </tr>
+      <tr>
+        <td>Null</td>
+        <td>"object"</td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td>"boolean"</td>
+      </tr>
+      <tr>
+        <td>Number</td>
+        <td>"number"</td>
+      </tr>
+      <tr>
+        <td>BigInt</td>
+        <td>"bigint"</td>
+      </tr>
+      <tr>
+        <td>String</td>
+        <td>"string"</td>
+      </tr>
+      <tr>
+        <td>Symbol</td>
+        <td>"symbol"</td>
+      </tr>
+      <tr>
+        <td>Function</td>
+        <td>"function"</td>
+      </tr>
+      <tr>
+        <td>Lainnya</td>
+        <td>"object"</td>
+      </tr>
+    </table>
+
+    <p>kode operator typeof</p>
+    <pre><code>let data;
+if(typeof data === "number"){
+  document.writeln("Number");
+} else if(typeof data === "string"){
+  document.writeln("String");
+} else if(typeof data === "boolean"){
+  document.writeln("Boolean");
+} else if(typeof data === "object"){
+  document.writeln("Object");
+}
+    </code></pre>
+
+    <h1>In Operator</h1>
+    <p>In operator adalah operator yang bisa dilakukan untuk mengecek apakah sebuah property ada di dalam object atau tidak</p>
+    <p>jika property tersebut ada di object, maka hasilnya true, sedangkan jika tidak, maka hasilnya akan false</p>
+    <p>tidak hanya di object, in juga bisa digunakan untuk mengecek index di array</p>
+
+    <p>kode in operator</p>
+    <pre><code>const person = {
+      firstName: "Kemas",
+      lastName: "Yunus"
+}
+
+const result = "firstName" in person;
+document.writeln(result)</code></pre>
+    <h2>peringatan</h2>
+    <p>in operator hanya akan mengecek apakah sebuah property atau index ada atau tidak</p>
+    <p>jadi walaupun nilai property atau indexnya undefined atau null, maka tetap akan dianggap ada.</p>
+
+    <p>kode in operator undefined / null propery</p>
+    <pre><code>const person = {
+      lastName: undefined
+}
+
+const result = "lastName" in person;
+document.writeln(result);
+const names = [null, "kemas", null];
+const nameResult = 0 in names;
+document.writeln(nameResult);
+</code></pre>
+    <h1>Ternary Operator</h1>
+    <p>ternary operator adalah operator sederhana dari if statement</p>
+    <p>ternary operator terdiri dari kondisi yang dievaluasi, jika menghasilkan true maka nilai pertama diambil, jika false, maka nilai kedua diambil</p>
+    <p>kode tanpa ternary operator</p>
+    <pre><code>const nilai = 60;
+let ucapan;
+if(nilai >=75){
+  ucapan = "Selamat anda lulus";
+} else {
+  ucapan = "silakan coba lagi";
+}
+document.writeln(ucapan)
+    </code></pre>
+
+    <p>kode dengan ternary operator</p>
+    <pre><code>const nilai = 60;
+const ucapan = nilai >=75 ? "Selamat anda lulus" : "silakan coba lagi";
+document.writeln(ucapan);
+    </code></pre>
+
+    <h1>Nullish Coalescing Operator</h1>
+    <p>Nullist value adalah null dan undefined</p>
+    <p>Nullist coalescing operator (??) adalah operator mirip dengan ternary operator, yang membedakan adalah pada kondisi, jika bernilai null atau undefined, baru value defaultnya diambil</p>
+    <p>kode tanpa nullish coalescing operator</p>
+    <pre><code>let parameter;
+let data = parameter;
+if(data === undefined || data == null){
+  data = "nilai default";
+}
+
+document.writeln(data);
+    </code></pre>
+
+    <p>kode nullish cealescing operator</p>
+    <pre><code>let parameter;
+let data = parameter ?? "Nilai Default";
+document.writeln(data);
+    </code></pre>
+
+    <h1>optional Chaining</h1>
+    <p>optional chaining operator (?) merupakan operator yang digunakan untuk mengamankan ketika kita ingin mengakses property sebuah object dari data nullish</p>
+    <p>jika kita mencoba mengakses property dari sebuah object dari data nullish tanpa menggunakan optional chaining operator, maka akan terjadi error</p>
+    <pre><code>let person = {};
+document.writeln(person.address.country);
+    </code></pre>
+    <p>error mengakses property nullish</p>
+    <img src="../image/errormengaksespropertynullish.png">
+
+    <p>kode pengecekan menggunakan if</p>
+    <pre><code>let person = {};
+let say;
+if(person.address !== undefined && person.address !== null) {
+  say = person.address.country;
+}
+document.writeln(say);
+    </code></pre>
+    <p>kode menggunakan optional chaining</p>
+    <pre><code>let person = {};
+document.writeln(person?.address?.country);
+    </code></pre>
+    <h1>Falsy and truthy</h1>
+    <h2>Falsy</h2>
+    <p>falsy atau kadang ditulis falsey, adalah value yang ketika dalam konteks boolean, dia dianggap false</p>
+    <p>ini adalah salah satu fitur unik dari javascript, yang berguna namun, kadang juga sering membingungkan</p>
+    <p>jadi di javascript, kondisi itu tidak hanya bisa boolean, tpai diluar boolean pun bisa, namun kita harus tau beberapa data falsy atau dianggap false</p>
+
+    <p>data falsy</p>
+    <table>
+      <tr>
+        <th>Data dianggap falsy</th>
+        <th>keterangan</th>
+      </tr>
+      <tr>
+        <td>false</td>
+        <td>boolean false</td>
+      </tr>
+      <tr>
+        <td>0, -0</td>
+        <td>number 0 dan -0 dianggap false</td>
+      </tr>
+      <tr>
+        <td>"", '', ``</td>
+        <td>semua string kosong dianggap false</td>
+      </tr>
+      <tr>
+        <td>null</td>
+        <td>null dianggap false</td>
+      </tr>
+      <tr>
+        <td>undefined</td>
+        <td>undefined dianggap false</td>
+      </tr>
+      <tr>
+        <td>NaN</td>
+        <td>Not a Number dianggap false</td>
+      </tr>
+    </table>
+
+    <h2>Truthy</h2>
+    <p>kode falsy dan truthy</p>
+    <pre><code>let data = "";
+if(data){
+  document.writeln("TRUE");
+} else {
+  document.writeln("FALSE");
+}
+    </code></pre>
+    <h1>Operator logika di non boolean</h1>
+    <p>Sebelumnya kita sudah tau bahwa operator logika AND (&&) dan OR (||) digunakan untuk dua data boolean</p>
+    <p>Namun berbeda dengan di javascript, kita bisa menggunakna operator logika AND dan OR untuk tipe data non boolean</p>
+    <h2>Operator OR (||) di non boolean</h2>
+    <p>operator logika OR (||), membaca dari kiri ke kanan</p>
+    <p>Operator ini akan mengambil nilai pertama yang truthy</p>
+    <p>jika tidak ada satupun yang bernilai truthy, maka yang terakhir akan diambil</p>
+
+    <p>kode operator OR (||)</p>
+    <pre><code>document.writeln("hellO" ||''); //hello
+document.writeln("" || []); //[]
+document.writeln("0" || "NOL"); //0
+document.writeln(0 || "NOL"); //NOL
+document.writeln(null || "NULL"); //NULL
+document.writeln(undefined || "UNDEFINED"); //NULL
+    </code></pre>
+    <h2>Operator AND (&&) di non Boolean</h2>
+    <p>Operator logika AND (||), membaca dari kiri ke kanan</p>
+    <p>Operator ini akan mengambil nilai pertama yang falsy</p>
+    <p>Jika tidak ada satupun yang bernilai falsy, maka yang terakhir yang akna diambil</p>
+
+    <p>kode operator AND (&&)</p>
+    <pre><code>document.writeln("hellO" && ''); //''
+document.writeln("" && []); //""
+document.writeln("0" && "NOL"); //NOL
+document.writeln(0 && "NOL"); //0
+document.writeln(null && "NULL"); //null
+document.writeln(undefined && "UNDEFINED"); //undefined
+document.writeln("undefined" && "null"); //null</code></pre>
+    <h1>For Loop</h1>
+    <p>For adalah salah satu kata kunci yang bisa digunakan untuk melakukan perulangan</p>
+    <p>blok kode yang terdapat di dalam for akan selalu diulangi selama kondisi for terpenuhi</p>
+
+    <h2>sintaks perulangan for</h2>
+    <pre><code>for(init statement; kondisi; post statement){
+  //block perulangan
+}</code></pre>
+    <p>init statement akan dieksekusi hanya sekali di awal sebelum perulangan</p>
+    <p>kondisi akan dilakukan pengecekan dalam setiap perulangan, jika true perulangan akan dilakukan, jika false perulangan akan berhenti</p>
+    <p>post statement akan dieksekusi setiap kali diakhir perulangan</p>
+    <p>init statement, kondisi dan post statement tidak wajib diisi, jika kondisi tidak diisi berarti kondisi selalu bernilai true</p>
+
+    <p>kode perulangan tanpa henti</p>
+    <pre><code>for ( ; ; ){
+  document.writeln("forever loop");
+}</code></pre>
+
+    <p>kode perulangan dengan kondisi</p>
+    <pre><code>let counter = 1;
+for(; counter &lt;= 10;){
+  document.writeln(`perulangan ke ${counter}`);
+  counter++;
+}</code></pre>
+
+    <p>kode perulangan dengan init statement</p>
+    <pre><code>for(let counter = 1; counter &lt;= 10;){
+  document.writeln(`perulangan ke ${counter}`);
+  counter++;
+}</code></pre>
+
+    <p>kode perulangan dengan post statement</p>
+    <pre><code>
+for(let counter = 1;; counter &lt;= 10;counter++){
+  document.writeln(`perulangan ke ${counter}`);
+}</code></pre>
+
+    <h1>while loop</h1>
+    <p>while loop adalah versi perulangan yang lebih sederhana dibanding for loop</p>
+    <p>di while loop, hanya terdapat kondisi perulangan, tanpa ada init statement dan post statement</p>
+    <p>kode while loop</p>
+    <pre><code>let counter = 1;
+while(counter&lt;=10){
+  document.writeln(`perulangan ke ${counter}`);
+  counter++;
+}
+    </code></pre>
+
+    <h1>Do while loop</h1>
+    <p>do while loop adalah perulangan yang mirip dengan while</p>
+    <p>perbedaannya hanya pada pengecekan kondisi</p>
+    <p>pengecekan kondisi di while loop dilakukan di awal sebelum perulangan dilakukan, sedangkan di do while loop dilakukan setelah perulangan dilakukan</p>
+    <p>oleh karena itu dalam do while loop, minimal pasti sekali perulangan dilakukan walaupun kondisi tidak bernilai true</p>
+
+    <p>kode do while loop</p>
+    <pre><code>let counter = 1;
+do{
+  document.writeln(`perulangan ke ${counter}`);
+  counter++;
+} while (counter &lt;=10);
+    </code></pre>
+    <h1>break dan continue</h1>
+    <p>pada switch statement, kita sudah mengenal kata kunci break, yaitu untuk menghentikan case dalam switch</p>
+    <p>sama dengan pada perulangan, break juga digunakan untuk menghentikan seluruh perulangan</p>
+    <p>namun berbeda dengan continue, continue digunakan untuk menghentikan perulangan saat ini, lalu melanjutkan ke perulangan selanjutnya.</p>
+
+    <p>kode break</p>
+    <pre><code>let counter = 1;
+while (true){
+  document.writeln(`perulangan ke ${counter}`);
+  counter++;
+  if(counter&gt;10){
+    break;
+  }
+}</code></pre>
+    <p>kode continue</p>
+    <pre><code>for(let i = 1; i &lt;= 100; i++){
+      if(i % 2 === 0){
+        continue;
+      }
+      document.writeln(`bilangan ganjil ${i}`);
+}</code></pre>
+    <h1>label</h1>
+    <p>label merupakan penanda yang bisa digunakan dengan kata kunci break dan continue</p>
+    <p>secara default saat kita melakukan break atau continue, dia akan melakukan terhadap perulangan dimana kode break dan continue digunakan</p>
+    <p>dengan menggunakan label, kita bisa melakukan break dan continue terhadap perulangan yang kita inginkan, asalkan pada perulangannya kita gunakan label</p>
+    <p>untuk membuat label, kita bisa gunakan nama label lalu diikuti dengan : (titik dua)</p>
+
+    <p>kode label</p>
+    <pre><code>loopi:
+for(let i = 0; i &lt; 100; i++){
+  loopj:
+  for(let j = 0; j &lt; 10; j++){
+    document.writeln(`${i} - ${j}`);
+  }
+}</code></pre>
+    <p>kode continue atau break di label</p>
+    <pre><code>loopi:
+for(let i = 0; i &lt; 10; i++){
+  loopj:
+  for(let j = 0; j &lt; 100; j++){
+    if(j>10){
+      continue loopi;
+    }
+    document.writeln(`${i} - ${j}`);
+  }
+}
+    </code></pre>
+
+    <h1>For In</h1>
+    <p>for in merupakan perulangan for yang digunakan untuk mengiterasi seluruh data property di object atau index di array</p>
+    <p>walaupun for in bisa digunakan untuk array, namun tidak direkomendasikan untuk array, karena biasanya kita jarang sekali butuh data index untuk array, kita bisa menggunakan for of (yang dibahas detail setelah ini)</p>
+    <p>kode for in di object</p>
+    <pre><code>const person = {
+  firstName: "Kemas",
+  middleName: "Muhammad",
+  lastName: "Yunus"
+};
+for (const property in person){
+  document.writeln(`property ${property} : ${person[property]}`);
+}
+</code></pre>
+
+    <p>kode for in di array</p>
+    <pre><code>const names = ["Kemas", "Muhammad", "Yunus"];
+for(const index in names){
+  document.writeln(`index ${index} : ${names[index]}`);
+}
+    </code></pre>
+
+    <h1>for of</h1>
+    <p>jika for in digunakan untuk melakukan iterasi property atau index, berbeda dengan for of, ini digunakan untuk melakukan iterasi terhadap isi value dari iterable object,  seperti array, string dan lain-lain</p>
+    <p>for of tidak bisa digunakan untuk melakukan iterasi data di object, karena object bukanlah iterable</p>
+    <p>kode for of di array</p>
+    <pre><code>const names = ["Kemas", "Muhammad", "Yunus"];
+for (const name of names){
+  document.writeln(`${name}`);
+}
+    </code></pre>
+
+    <p>kode for of di string</p>
+    <pre><code>const name = "Kemas Muhammad Yunus";
+for (const char of name){
+  document.writeln(`${char}`);
+}
+    </code></pre>
+
+    <h1>with statement</h1>
+    <p>with statement merupakan fitur yang digunakan untuk menurunkan sebuah scope data</p>
+    <p>dengan menggunakan with statement, kita bisa mengakses property dalam sebuah data tanpa harus menyebut datanya</p>
+    <p>kode tanpa with statement</p>
+
+    <pre><code>const person ={
+      firstName: "Kemas",
+      middleName: "Muhammad",
+      lastName: "Yunus"
+}
+document.writeln(person.firstName);
+document.writeln(person.middleName);
+document.writeln(person.lastName);
+</code></pre>
+
+    <p>kode dengan with statement</p>
+    <pre><code>const person ={
+      firstName: "Kemas",
+      middleName: "Muhammad",
+      lastName: "Yunus"
+}
+
+with(person){
+  document.writeln(firstName);
+  document.writeln(middleName);
+  document.writeln(lastName);
+}
+</code></pre>
+  <h2>with statement tidak direkomendasikan</h2>
+  <p>walaupun fitur with statement ini sangat menarik</p>
+  <p>namun kebanyakan orang tidak merekomendasikan penggunaan with statement</p>
+  <p>hal ini dikarenakan with statement kadang membuat sebuah kode menjadi ambigu</p>
+
+  <p>kode ambigu di with statement</p>
+  <pre><code>const person ={
+      firstName: "Kemas",
+      middleName: "Muhammad",
+      lastName: "Yunus"
+}
+const firstName = "ini";
+const middleName = "coba";
+with(person){
+  document.writeln(firstName); // niatnya ingin jadi  ini
+  document.writeln(middleName); // niatnya ingin jadi coba
+  document.writeln(lastName);
+}
+  </code></pre>
+
+  <h1>Function</h1>
+  <p>function adalah blok kode program yang akan berjalan saat kita panggil</p>
+  <p>sebelumnya kita sudah menggunakan function writeln() untuk menampilkan tulisan di html</p>
+  <p>untuk membuat function, kita bisa menggunakan kata kunci function, lalu diikuti dengan nama function, kurung () dan diakhiri dengan block kurung kurawal {}</p>
+  <p>kita bisa memanggil function dengan menggunakna nama function lalu diikuti dengan kurung ()</p>
+  <p>di bahasa pemrograman lain, function juga disebut dengan method</p>
+
+  <p>kode function</p>
+  <pre><code>// membuat function
+function sayHelloWorld(){
+  document.writeln("Halo dunia penuh derita!");
+}
+
+// memanggil function
+sayHelloWorld();
+sayHelloWOrld(); //boleh berkali-kali
+</code></pre>
+
+    <h1>function parameter</h1>
+    <p>kita bisa mengirim informasi ke function yang ingin kita panggil</p>
+    <p>untuk melakukan hal tersebut, kita perlu menambahkan parameter atau argument di function yang sudah kita buat</p>
+    <p>parameter ditempatkan di dalam kurung() di deklarasi method</p>
+    <p>parameter bisa lebih dari satu, jika lebih dari satu, harus dipisah menggunakan tanda koma</p>
+
+    <p>kode function parameter</p>
+    <pre><code>//membuat function dengan parameter
+function sayHello(firstName, lastName){
+  document.writeln(`halo ${firstName} ${lastName}`);
+}
+
+sayHello("Kemas", "Yunus");
+sayHello("kousaka", "Reina");
+    </code></pre>
+
+    <h1>function return value</h1>
+    <p>secara default, function itu tidak menghasilkan value apapun, namun, jika kita ingin, kita bisa membuat sebuah function mengembalian value</p>
+    <p>agar function bisa mengembalikan value, kita bisa menggunakan kata kunci return di dalam function nya</p>
+    <p>dan didalam block function, untuk menghasilkan nilai tersebut, kita harus menggunakan kata kunci return, lalu diikuti dengan data yang ingin kita hasilkan</p>
+    <p>function hanya bisa mengembalikan satu data, jika kita ingin mengembalikan beberapa data sekaligus, kita bisa menggunakan array sebagai return valuenya</p>
+
+    <p>kode function return value</p>
+    <pre><code>// membuat function dengan parameter dan value
+function sayHello(firstName, lastName){
+  const say = `Halo ${firstName} ${lastName}`;
+  return say;
+}
+
+// memanggil function dan menangkap return valuenya
+const result = sayHello("Kousaka", "Reina");
+document.writeln(result);
+    </code></pre>
+
+    <p>kode function return value lebih dari satu</p>
+    <pre><code>function getFinalScore(value){
+  if (value &gt; 90){
+    return "A";
+  } else if ( value &gt; 80){
+    return "B";
+  } else if ( value &gt; 70){
+    return "C";
+  } else if ( value &gt; 60){
+    return "D";
+  } else {
+    return "E";
+  }
+}</code></pre>
+
+    <h2>menghentikan eksekusi dengan return</h2>
+    <p>saat kita menggunakan kata kunci return, maka kode setelah return tersebut tidak akan dieksekusi</p>
+    <p>kita bisa menggunakan return untuk menghentikan eksekusi sebuah function</p>
+
+    <p>kode menghentikan eksekusi dengan return</p>
+    <pre><code>function isContains(array, searchValue){
+  for(const element of array){
+    if(element === searchValue){
+      return true;
+    }
+  }
+  return false;
+}
+
+document.writeln(isContains([1,2,3,4,5,6,7,8,9,10], 5));
+</code></pre>
+    <h1>Optional parameter</h1>
+    <p>secara default, parameter di function itu optional</p>
+    <p>artinya kita tidak wajib mengisi value nya ketika memanggil function</p>
+    <p>jika tidak ada value, yang akan kita kirim ke parameter ketika memanggil function, maka secara otomatis parameter tersebut bernilai undefined</p>
+
+    <p>kode optional parameter</p>
+    <pre><code>function sayHello(fistName, middleName, lastName){
+  document.writeln(fistName);
+  document.writeln(middleName);
+  document.writeln(lastName);
+}
+sayHello("Yunus");</code></pre>
+    <h1>default parameter</h1>
+    <p>sekarang kita tahu bahwa parameter itu optional, artinya kita bisa tidak memberi value terhadap parameter</p>
+    <p>parameter juga bisa kita beri default value, artinya jika ketika kita tidak mengirim data ke parameter, atau kita mengirim data undefined, maka secara otomatis parameter akan diisi oleh default value</p>
+    <pre><code>function register(name, gender = "Unknow"){
+  document.writeln(name);
+  document.writeln(gender);
+}
+register("Kousaka", "Female");
+regirster("Kumiko");
+regirster("yukina", undefined);
+</code></pre>
+
+    <h1>Rest Parameter</h1>
+    <p>rest parameter adalah fitur dimana kita bisa mengirim data sebanyak banyaknya pada satu parameter dan secara otomatis akan di konversi menjadi array</p>
+    <p>untuk membuat rest parameter, ada ketentuannya</p>
+    <p>rest parameter hanya boleh ada satu di function, tidak boleh lebih dari satu</p>
+    <p>rest parameter hanya boleh berada di posisi paling akhir, tidak boleh di depan atau ditengah, kecuali memang cuma ada 1 parameter</p>
+    <p>di bahasa pemrograman lain, ada jug ayang bilang ini adalah variable argument.</p>
+
+    <p>kode rest parameter</p>
+    <pre><code>function sum(name, ...data){
+  let total = 0;
+  for(const item  of data){
+    total += item;
+  }
+  document.writeln(`total ${name} is ${total}`);
+
+  sum("orange", 1,2,3,4,2,1,23);
+  sum("apple", 3,2,4,5,2,3,3);
+  sum("banana", 1,2,4,1,5,12,2);
+}
+    </code></pre>
+
+    <h2>spread syntax</h2>
+    <p>kadang kita terlanjut memiliki data berupa array</p>
+    <p>tapi untungnya kita juga bisa mengiriim array ke rest parameter</p>
+    <p>kita bisa gunakan ...(titik tiga kali) diikuti dengan array nya ketika memanggil function</p>
+    <p>fitur ini dinamakan spread syntax</p>
+
+    <p>kode spread syntax di rest parameter</p>
+    <pre><code>function sum(name, ...data){
+  let total = 0;
+  for(const item of data){
+    total += item;
+  }
+  document.writeln(`total ${name} is ${total}`);
+}
+sum("orange", ...[1,2,3,4,2,1,23]);
+sum("apple", ...[3,2,4,5,2,3,3]);
+sum("banana", ...[1,2,4,1,5,12,2]);
+</code></pre>
+    <h2>argument object</h2>
+    <p>sebelum ada fitur rest parameter, di javascript sudah ada fitur yang bernama arguments object</p>
+    <p>ini adalah fitur dimana kita bisa mengambil semua parameter dalam bentuk array dengan menggunakan object bernama arguments</p>
+    <p>arguments secara otomatis bisa digunakan di function</p>
+    <p>namun perlu diingat, bahwa untuk javascript saat ini, lebih baik disarankan menggunakan rest parameter dibanding arguments object</p>
+
+    <p>kode argumetns object</p>
+    <pre><code>function oldSum(){
+  let total = 0;
+  for(const item of arguments){
+    total += items;
+  }
+  document.writeln(`total is ${total}`);
+
+  oldSum(1, 2, 3, 4, 5, 6, 7);
+}</code></pre>
+
+    <h1>function sebagai value</h1>
+    <p>function tidak hanya bisa digunakan sebagai kode program yang dieksekusi, tapi bisa juga sebagai value</p>
+    <p>artinya, function bisa disimpan di variable, bisa juga dikirim melalui parameter ke function lainnya</p>
+
+    <p>kode function di variable</p>
+    <pre><code>function sayHello(name){
+  document.writeln(`helo ${name}`);
+}
+
+let say = sayHello;
+
+sayHello("Kemas");
+say("reina");
+</code></pre>
+    <p>kode function di parameter</p>
+    <pre><code>function sayHello(name){
+  document.writeln(`helo ${name}`);
+}
+
+let say = sayHello;
+
+function giveMeName(callback){
+  callback("Yukina");
+}
+giveMeName(sayHello);
+giveMeName(say);
+</code></pre>
+    <h1>anonymous function</h1>
+    <p>sebelumnya kita selalu membuat function dengan nama</p>
+    <p>kita juga bisa membuat function tanpa nama function, atau istilahnya adalah anonymous function</p>
+    <p>kita bisa buat anonymous function dalam sebuah variable atau bisa juga kita buat ketika mengiri parameter</p>
+    <p>kode anonymous function di variable</p>
+    <pre><code>let say = function (name){
+  document.writeln(`halo ${nama}`);
+}
+say("Kousaka reina");
+</code></pre>
+
+    <h2>kode anonymous function di parameter</h2>
+    <pre><code>function giveMeName(callback){
+  callback("YUKINA");
+}
+
+giveMeName(function (name){
+  document.writeln(`halo ${name}`);
+})
+</code></pre>
+
+    <h1>function dalam function</h1>
+    <p>tidak ada batasan dimana kita bisa membuat function</p>
+    <p>termasuk jika kita ingin membuat function didalam sebuah function, kita bisa melakukannya</p>
+    <p>function yang terdapat didalamm kita sebut inner function</p>
+    <p>inner function hanya bisa diakses di tempat kita membuat functionnya, tidak bisa diakses dari luar functionnya.</p>
+
+    <p>kode function didalam function</p>
+    <pre><code>function outer(){
+  functin inner(){
+    document.writeln("inner");
+  }
+  inner();
+  inner();
+}
+
+outer();
+inner(); // Error can not access inner function</code></pre>
+    <h1>scope</h1>
+    <p>scope merupakan area akses sebuah data</p>
+    <p>ada dua jenis scope, global scope dan local scope</p>
+    <p>setiap kita membuat function, maka kita akan membuat local scope untuk function tersebut</p>
+    <p>data di global scope bisa diakses dari local scope, namun data di local scope hanya bisa diakses di local scope tersebut atau di scope local dibawahnya (dalam kasus function dalam function)</p>
+
+    <p>kode global scope</p>
+    <pre><code>//global scope
+let counter = 0;
+
+function hitMe(){
+  //local scope function hitMe
+  counter++;
+}
+
+hitMe();
+hitMe();
+
+console.info(counter);
+    </code></pre>
+
+    <p>kode local scope</p>
+    <pre><code>function first(){
+  let firstVariable = "First";
+}
+
+function second(){
+  let secondVariable = "Second";
+}
+
+first();
+second();
+
+console.info(firstVariable); // can not access local scope
+console.info(secondVariable); // can not access local scope
+</code></pre>
+
+    <p>kode nested function scope</p>
+    <pre><code>function first(){
+  let firstVariable = "First";
+  function second(){
+    console.info(firstVariable); // can access local scope first function
+  }
+
+  second();
+}
+first();
+</code></pre>
+    <h2>recursive function</h2>
+    <p>recursive function adalah kemampuan function untuk memanggil function dirinya sendiri</p>
+    <p>kadang memang ada banyak problem, yang lebih mudah diselesaikan menggunakan recursive function, seperti contohnya kasus factorial</p>
+
+    <p>kode factorial loop</p>
+    <pre><code>function factorial(value){
+  let result = 1;
+  for (let i = 1; i &lt;= value; i++){
+    result *= i;
+  }
+  return result;
+}</code></pre>
+    
+    <p>kode factorial recursive</p>
+    <pre><code>function factorialRecursive(value){
+  if(value === 1){
+    return 1;
+  } else {
+    return value * factorialRecursive(value - 1);
+  }
+}</code></pre>
+
+    <h1>function generator</h1>
+    <p>function generator adalah function yang digunakan untuk membuat data generator</p>
+    <p>generator adalah data yang bisa di interasi seperti array</p>
+    <p>untuk membuat function generator, kita perlu menggunakan tanda *(bintang) setelah kata function</p>
+    <p>dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci yield diikuti datanya</p>
+    
+    <p>kode function generator sederhana</p>
+    <pre><code>function* createNames(){
+  yield "Kemas";
+  yield "Muhammad";
+  yield "Yunus";
+}
+
+const names = createNames();
+for (const name of names){
+  document.writeln(name)
+}
+</code></pre>
+
+    <p>kode function generator kompleks</p>
+    <pre><code>function* buatGanjil(value){
+  for(let i = 1; i &lt;= value; i++){
+    if(i % 2 === 1){
+      yield i;
+    }
+  }
+}
+
+const angkaGanjil = buatGanjil(100);
+for(const angka of angkaGanjil){
+  document.writeln(angka)
+}
+</code></pre>
+
+    <h2>lazy evaluation</h2>
+    <p>generator itu sifatnya lazy</p>
+    <p>jadi artinya jika kita tidak data belum kita ambil dari generator, maka yield selanjutnya tidak akan dieksekusi</p>
+
+    <p>kode lazy generator</p>
+    <pre><code>function* buatGanjil(value){
+  for(let i = 1; i &lt;= value; i++){
+    if(i % 2 === 1){
+      document.writeln(`perulangan ke ${i}`);
+      yield i;
+    }
+  }
+}
+const angkaGanjil = buatGanjil(100);
+document.writeln(angkaGanjil.next().value);
+document.writeln(angkaGanjil.next().value);
+document.writeln(angkaGanjil.next().value);
+</code></pre>
+
+    <h1>arrow function</h1>
+    <p>arrow function adalah alternatif pembuatan function yang lebih sederhana dari function biasanya</p>
+    <p>namun terdapat limitasi dan juga tidak bisa digunakan di semua situasi</p>0
+    <p>dinamakan arrow function karena menggunakan tanda =&gt; (seperti panah)</p>
+    <p>berikut contoh beberapa kekurangan arrow function :</p>
+    <table>
+      <tr>
+        <td>tidak memiliki fitur arguments object</td>
+      </tr>
+      <tr>
+        <td>tidak bisa menggunakan function generator</td>
+      </tr>
+      <tr>
+        <td>tidak bisa mengakses this (yang nanti akan dibahas di function di object)</td>
+      </tr>
+      <tr>
+        <td>tidak bisa mengakses super (yang nanti akan dibahas di javascript oop)</td>
+      </tr>
+    </table>
+
+    <p>kode membuat arrow function</p>
+    <pre><code>const sayHello = (name) =&gt; {
+  const say = `hello ${name}`;
+  document.writeln(say);
+}
+
+sayHello("Kemas");</code></pre>
+
+    <h2>arrow function tanpa block</h2>
+    <p>jika sebuah arrow function isinya sederhana, misal hanya satu baris</p>
+    <p>kita bisa membuat arrow function tanpa harus menggunakan block</p>
+
+    <p>kode arrow function tanpa block</p>
+    <pre><code>const sayHello = (name) =&gt; document.writeln(`hello ${name}`);
+
+sayHello("Kemas");
+    </code></pre>
+
+    <h2>arrow function return value</h2>
+    <p>arrow function bisa mengembalikan value, sama seperti function biasanya</p>
+    <p>jika menggunakan block, maka kita perlu menggunakan kata kunci return</p>
+    <p>jika tidak menggunakan block, kita tidak perlu menggunakan kata kunci return</p>
+
+    <p>kode arrow function return value</p>
+    <pre><code>const sum = (first, secont) =&gt; frst + second;
+
+document.writeln(sum(20,20));
+    </code></pre>
+
+    <h2>arrow function tanpa kurung parameter</h2>
+    <p>jika parameter di arrow function hanya satu, kita bisa tidak menggunakan kurung pada parameter</p>
+
+
+    <p>kode arrow function tanpa kurung parameter</p>
+    <pre><code>const sayHello = name =&gt; document.writeln(`hello ${name}`);
+
+sayHello("KEmas");
+    </code></pre>
+
+    <h2>kode arrow function sebagai parameter</h2>
+    <p>karena arrow function sama seperti anonymous function</p>
+    <p>jadi kita juga bisa menggunakan arrow function sebagai parameter di function lain</p>
+
+    <p>kode arrow function sebagai parameter</p>
+    <pre><code>function giveMeName(callback){
+  callback("kemas");
+}
+
+giveMeName((name) =&gt; document.writeln(`halo ${name}`));
+</code></pre>
+
+    <h1>clousure</h1>
+    <p>clousure adalah kombinasi function dan bundel referensi ke data disekitarnya</p>
+    <p>MEMBINGUNGKAN</p>
+    <p>kita sudah tahu bahwa local scope tidak bisa diakses di luar scope nya</p>
+    <p>dengan kemampuan clousure, kita bisa membuat sebuah function di local scope dan referensi ke data di sekitar local scope tersebut, keluar scopenya</p>
+
+    <p>kode clousure</p>
+    <pre><code>function createAdder(value){
+  const owner = "kemas";
+  function add(param){
+    document.writeln(owner);
+    return value + param;
+  }
+  return add
+}
+
+
+const addTwo = createAdder(2);
+document.writeln(addTwo(10));
+document.writeln(addTwo(20));
+</code></pre>
+
+    <h1>object method</h1>
+    <p>pada tipe data object, kita sudah membahas tentang property di object</p>
+    <p>karena sebenarnya function juga merupakan salah satu tipe data, jadi function pun sebenarnya bisa ditambahkan sebagai property di object</p>
+    <p>cara pembuatannya pun sama dengan function sebagai value</p>
+    <p>function di object kadang disebut juga sebagai object method</p>
+    <p>kode membuat object dengan method</p>
+    <pre><code>const person = {
+  name: "Kemas",
+  sayHello: function (name) {
+    document.writeln(`halo ${name}`);
+  }
+};
+
+person.sayHello("Kemas");</code></pre>
+
+    <p>kode menambahkan method ke object</p>
+    <pre><code>const person = {
+  name: "Kemas"
+};
+
+person.sayHello = function (name) {
+  document.writeln(`halo ${name}`);
+}
+
+person.sayHello("Kemas");
+</code></pre>
+    <h1>kata kunci this</h1>
+    <p>kata kunci this adalah referensi ke object milik siapa</p>
+    <p>tiap lokasi kata kunci this, bisa berbeda-beda referensi pemiliknya</p>
+    <p>dalam object method, this merupakan referensi ke object pemilik function nya</p>
+    <p>di global scope, this merupakan rerferensi ke global object (dibrowser biasanya windows)</p>
+    <p>dalam function, this merupakan referensi ke global object (di browser biasanya windows)</p>
+    <p>di function dengan strict mode (akan dibahas nanti), this adalah undefined</p>
+    <p>dalam event, this merupakan referensi ke element yang menerima event ( dibahas di materi dom)</p>
+    
+    <p>kode this di global scope</p>
+    <pre><code>document.writeln(this);</code></pre>
+
+    <p>kode this di function</p>
+    <pre><code>
+      function testThis(){
+  document.writeln(this);
+}
+testThis();
+</code></pre>
+
+    <p>kode this di object method</p>
+    <pre><code>const person = {
+  name: "Kemas",
+  sayHello: function (name){
+    // this = person
+    document.writeln(`hi ${name}, my name is ${this.name}`);
+  }
+}
+person.sayHello("Kousaka")
+</code></pre>
+    <h1>arrow function di object</h1>
+    <p>sebelumnya kita sudah bahas tentang arrow function</p>
+    <p>arrow function juga bisa kita gunakan di sebagai object method</p>
+    <p>namun perlu diketahui, arrow function tidak bisa digunakan untuk mengakses arguments object, function generator, kata kunci this dan kata kunci super (dibahas di materi javascript oop)</p>
+    <p>jadi pastikan gunakan arrow function hanya memang ketika kita tidak butuh fitur-fitur diatas</p>
+    <pre><code>const person = {
+  name: "Kemas",
+  sayHello: (name) =&gt; {
+    document.writeln(`halo ${name}`);
+  }      
+};
+
+person.sayHello("Reina")</code></pre>
+
+    <p>kode this di arrow function object</p>
+    <pre><code>const person = {
+  name: "Kemas",
+  sayHello: (name) =&gt; {
+    document.writeln(this); //window
+    document.writeln(`halo ${name}, my name is ${this.name}`);
+  }
+};
+document.writeln("Yukina");
+    </code></pre>
+    <h1>Getter and Setter</h1>
+    <p>getter dan setter adalah kemampuan membuat function yang berbeda untuk mengambil data (getter) dan engubah data (setter) pada sebuah property di object</p>
+    <p>dengan menggunakan getter dan setter, kita bisa melakukan hal apapun dalam function sebelum sebuah property di akses atau diubah, misal menambahkan validasi dan lain lain.</p>
+
+    <p>kode getter</p>
+    <pre><code>const person = {
+  firstName: "Kemas",
+  lastName: "Muhammad",
+  get fullName(): {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+// otomatis memanggil get function fullname()
+document.writeln(person.fullname);
+</code></pre>
+
+    <p>kode setter</p>
+    <pre><code>const person = {
+  firstName: "Kemas",
+  lastName: "Muhammad",
+  get fullName(): {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  set fullName(val){
+    const array = val.split(" ");
+    this.firstName = array[0];
+    this.lastName = array[1];
+    
+  }
+}
+
+person.fullName = "Kemas M."
+document.writeln(person.firstName);
+document.writeln(person.lastName);
+</code></pre>
+
+    <h1>masalah variable var</h1>
+    <p>sebelumnya sudah dijelaskan bahwa penggunaan var sudah tidak direkomendasikan lagi dan diganti let</p>
+    <p>pertanyaannya kenapa?</p>
+    <p>alasan var tidak direkomendasikan digunakan lagi adalah, karena var tidak memiliki block scope, artinya dia tidak mengikat ke local scope yang sebelumnya sudah kita bahas</p>
+    <p>karena masalah ini, var bisa tidak terprediksi</p>
+    <p>kita akan membuat contoh penggunaan var dan let</p>
+    <p>kode menggunakan let</p>
+    <pre><code>let i = 20;
+for(let i = 0; i &lt; 10; i++){
+  console.log(`local: ${i}`);
+}
+
+document.writeln(`global: ${i}`);
+    </code></pre>
+
+    <p>kode menggunakan var</p>
+    <pre><code>var i = 20;
+for(var i = 0; i &lt; 10; i++){
+  console.log(`local: ${i}`);
+}
+
+document.writeln(`global: ${i}`);
+    </code></pre>
+
+    <h1>destructuring</h1>
+    <p>destructuring adalah fitur yang bisa digunakan untuk membongkar value-value di array atau object ke dalam variable-variable</p>
+    <p>fitur ini sangat mempermudah ketika kita ingin mengambil data dari array atau object tanpa harus melakukan pengambilan data satu persatu</p>
+
+    <p>kode mengambil data di array</p>
+    <pre><code>const names = ["Kemas", "Muhammad", "Yunus"];
+const firstName = names[0];
+const middleName = names[1];
+const lastName = names[2];
+
+document.writeln(firstName);
+document.writeln(middleName);
+document.writeln(lastName);
+    </code></pre>
+
+    <p>kode destructuring array</p>
+    <pre><code>const names = ["Kemas", "Muhammad", "Yunus", "kousaka", "Yukina"];
+const [firstName, middleName, lastName, ...others] = names;
+
+document.writeln(firstName);
+document.writeln(middleName);
+document.writeln(lastName);
+document.writeln(others);
+</code></pre>
+
+    <p>mengambil data di object</p>
+    <pre><code>const person = {
+  firstName: "Kemas",
+  middleName: "muhammad",
+  address: {
+    street: "jalan coba dulu",
+    city: "desa api",
+    country: "konoha"
+  }, 
+  hobby: "latihan ninja",
+  sosmed: "kuchiosen"
+};
+
+const fistName = person.firstName;
+const middleName = person.middleName;
+</code></pre>
+
+    <p>kode destructuring object</p>
+    <pre><code>const {firstName, lastName, address, ...others} = person;
+document.writeln(firstName);
+document.writeln(lastName);
+document.writeln(address);
+document.writeln(others);
+    </code></pre>
+
+    <p>kode destructuring nested object</p>
+    <pre><code>const {firstName, lastName, address: {country, city, street}, ...others} = person;
+document.writeln(firstName);
+document.writeln(lastName);
+document.writeln(country);
+document.writeln(city);
+document.writeln(street);
+document.writeln(others);
+    </code></pre>
+    
+    <h2>destructuring function parameter</h2>
+    <p>destructuring tidak hanya bisa dilakukan di variable, tapi juga bisa dilakukan di function parameter</p>
+    <p>hal ini membuat kita mudah ketika ingin mengambil nested data dalam array atau object dalam function</p>
+
+    <p>kode destructuring di function parameter (1)</p>
+    <pre><code>function displayPerson({firstName, middleName, lastName}){
+  document.writeln(firstName);
+  document.writeln(middleName);
+  document.writeln(lastName);
+}
+
+const person = {
+  firstName: "Kemas",
+  middleName: "muhammad",
+  lastName: "yunus"
+};
+
+displayPerson(person);
+    </code></pre>
+    
+    <p>kode destructuring di function parameter (2)</p>
+    <pre><code>function sum([fist, second]){
+  return fist + second;
+}
+
+document.writeln(sum[10, 10]);
+document.writeln(sum[20, 10]);
+    </code></pre>
+
+    <h2>default value</h2>
+    <p>yang paling menarik di destructuring adalah, kita bisa menambahkan default value</p>
+    <p>jadi misal kita melakukan destructuring terhadap array, ternyata tidak ada datanya, maka kita bisa menambahkan default value</p>
+    <p>begitu juga pada object, jika ternyata property nya tidak ada, maka kita bisa menambahkan default value</p>
+
+    <p>kode default value destructuring array</p>
+    <pre><code>const names = ["Kemas", "Muhammad"];
+const [fistName, middleName, lastName= "Yunus"] = names;
+
+document.writeln(fistName);
+document.writeln(middleName);
+document.writeln(lastName);
+    </code></pre>
+
+    <p>kode default value destructuring array</p>
+    <pre><code>const person = {
+  firstName: "Kemas",
+  lastName: "yunus"
+};
+
+const {firstName, middleName = "Muhammad", lastName} = person;
+document.writeln(fistName);
+document.writeln(middleName);
+document.writeln(lastName);
+    </code></pre>
+
+    <h2>menggunakan nama variable lain</h2>
+    <p>saat kita melakukan destructuring di array, kita bisa dengan mudah membuat nama variable sesuka kita</p>
+    <p>namun pada saat melakukan destructuring, kita harus membuat nama variable sama dengan nama property</p>
+    <p>kita juga bisa menggunakan nama variable lain saat melakukan destructuring object jika kita mau</p>
+
+    <p>kode menggunakan nama variable lain</p>
+        <pre><code>const {
+  firstName: namaDepan,
+  middleName: namaTengah = "Muhammad",
+  lastName: namaBelakang
+} = person;
+
+document.writeln(namaDepan);
+document.writeln(namaTengah);
+document.writeln(namaBelakang);
+    </code></pre>
+
+    <h1>strict mode</h1>
+    <p>saat kita menjalankan kode program javascript, secara default kode program kita berjalan dalam mode tidak strict, atau istilahnya sloppy mode.</p>
+    <p>pada ECMAScript 5, diperkenalkan mode strict, dimana ketika strict mode dijalankan, maka akan merubah beberapa cara kerja javascript, seperti:</p>
+    <table>
+      <tr>
+        <td>merubah beberapa javascript error dari yang tadinya silent error, menjadi throw error (terlihat)</td>
+      </tr>
+      <tr>
+        <td>memperbaiki beberapa kesalahan engine javascript untuk optimasi</td>
+      </tr>
+      <tr>
+        <td>menolak beberapa kode perintah yang kedepannya akan digunakan di ECMAScript</td>
+      </tr>
+    </table>
+    <p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode</p>
+
+    <h2>cara menyalakan strict mode</h2>
+    <p>untuk menyalakan strict mode, kita bisa menabahkan `use strict` pada baris awal file javascript kita</p>
+    <p>atau bisa juga ditambahkan di awal function kita</p>
+
+    <p>kode strict mode</p>
+    <pre><code>function useStrictMode(){
+  'use strict';
+  const person = {
+    fistName: "Kemas"
+  }
+
+  with (person){
+    document.writeln(fistName);
+  }
+
+  useStrictMode();
+}</code></pre>
+
+    <h1>debugger</h1>
+    <p>debugger digunakan untuk melakukan proses debugging</p>
+    <p>debugging adalah proses mencari bug (masalah) yang biasa terjadi di kode program kita</p>\
+    <p>dengan debugger kita bisa menghentikan kode program di posisi yang kita inginkan (breakpoint), lalu melihat semua isi variable yang ada pada saat kode program sedang berhenti</p>
+
+    <p>kode debugger</p>
+    <pre><code>function createFullName(firstName, middleName, lastName){
+  debugger;
+  const fullName = `${fistName} ${lastName} ${lastName}`;
+  return fullName;
+}
+createFullName("Kemas", "Muhammad", "Yunus");
+</code></pre>
   </main>
 </body>
 </html>
+
