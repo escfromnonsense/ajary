@@ -118,6 +118,14 @@
       border-radius: 12px;
       margin: 1rem 0;
     }
+    garis {
+      display: block;
+      height: 4px; /* ketebalan garis */
+      background-color: var(--accent2);
+      margin: 2rem 0; /* jarak atas-bawah */
+      border-radius: 2px; /* opsional, biar agak halus */
+    }
+
   </style>
 </head>
 <body>
@@ -2383,7 +2391,144 @@ document.writeln(namaBelakang);
 }
 createFullName("Kemas", "Muhammad", "Yunus");
 </code></pre>
-  </main>
-</body>
+  <garis></garis>
+  <h1>Pengenalan Object Oriented Programming</h1>
+  <h2>apa itu object oriented programming?</h2>
+  <p>object oriented programming adalah sudut pandang bahasa pemrograman yang berkonsep "object"</p>
+  <p>ada banyak sudut pandang bahasa pemrograman, namun OOP adalah yang sangat populer saat ini</p>
+  <p>ada beberapa istilah yang perlu dimengerti dalam OOP yaitu object dan class</p>
+
+  <h2>apa itu object</h2>
+  <p>object adalah data yang berisi field / properties / attributes dan method / function / behavior</p>
+  
+  <h2>apa itu class</h2>
+  <p>class adalah blueprint, protorype atau cetakan untuk membuat object</p>
+  <p>class berisikan deklarasi semua properties dan functions yang dimiliki oleh object</p>
+  <p>setiap object selalu dibuat dari class</p>
+  <p>dan sebuah class bisa membuat object tanpa batas</p>
+
+  <p>class dan object person</p>
+  <img src="../image/classdanobjectperson.png">
+  <p>class dan object car</p>
+  <img src="../image/classdanobjectcar.png">
+  
+  <h2>OOP di javascript</h2>
+  <p>javascript sendiri sebenarnya sejak awal dibuat sebagai bahasa prosedural, bukan bahasa pemrograman berorientasi objek</p>
+  <p>oleh karena, implementasi oop di javascript memang tidak sedetail bahasa pemrograman lain yang memang dari awal merupakan bahasa pemrograman oop seperti java atau c++</p>
+  
+  <h1>membuat constructor function</h1>
+  <h2>membuat object</h2>
+  <p>sebenarnya kita sudah belajar tipe data object, dengan cara membuat variable dengan tipe data object</p>
+  <p>namun pembuatan object menggunakan tipe data object akan membuat object yang selalu unik, sedangkan dalam OOP, biasanya kita akan membuat class sebagai cetakan, sehingga bisa membuat object dengan karakteristik yang sama berkali-kali,  tanpa harus mendeklarasikan object berkali-kali seperti menggunakan tipe data object</p>
+  <p>kode membuat object dengan object</p>
+  <pre><code>const yunus{
+  firstName: "Kemas",
+  lastName: "Yunus"
+};
+
+const reina {
+  fistName: "Kousaka",
+  lastName: "Reina"
+};</code></pre>
+    
+    <h2>membuat constructor function</h2>
+    <p>sebelum EcmaScript versi 6, pembuatan class, biasanya menggunakan function, hal ini dikarenakan sebenarnya JavaScript bukanlah bahasa pemrograman yang fokus ke OOP</p>
+    <p>untuk membuat class di javascript lama, kita bisa membuat function</p>
+    <p>function ini kita sebut dengan constructor function</p>
+
+    <p>kode constructor functin</p>
+    <pre><code>function Person(){
+
+}</code></pre>
+
+<h2>membuat object dari constructor function</h2>
+    <p>setelah kita membuat class, jika kita ingin membuat boject dari class tersebut, kita bisa menggunakan kata kunci new, lalu diikuti dengan nama constructor functionnya</p>
+
+    <p>kode membuat object</p>
+    <pre><code>function Person(){
+  
+}
+
+const kemas = new Perwon();
+const reina = new Person();</code></pre>
+
+    <h1>property di constructor function</h1>
+    <p>sebenarnya setelah kita membuat object, kita bisa dengan mudah menambahkan property ke dalam object tersebut hanya dengan menggunakan nama variablenya, diikuti tanda titik dan  nama property</p>
+    <p>namun jika seperti itu, alhasil, constructor function yang sudah kita buat tidak terlalu berguna, karena property nya hanya ada di object yang kita tambahkan property</p>
+    <p>untuk menambahkan property di dalam semua object yang dibuat dari constructor function, kita bisa menggunakan kata kunci this lalu diikuti dengan nama property nya.</p>
+
+    <p>kode property di constructor function</p>
+    <pre><code>function Person(){
+  this.firstName = ""
+  this.lastName = ""
+}
+
+const yunus = new Person();
+const reina = new Person();</code></pre>
+
+    <h1>methow di constructor function</h1>
+    <p>sama seperti tipe data object biasanya, kita juga bisa menambahkan method di dalam constructor function</p>
+    <p>jika kita tambahkan method constructor function, secara otomatis object yang dibuat akan memiliki method tersebut</p>
+
+    <p>kode method di constructor function</p>
+    <pre><code>function Person(){
+  this.firstName = ""
+  this.lastName = ""
+  this.sayHello = function (name) {
+    document.writeln(`hello ${name}, my name is ${this.firstName}`)
+  }
+}</code></pre>
+
+    <h1>parameter di constructor function</h1>
+    <p>karena dalam javascript, clas adalah berbentuk function, jadi secara default, function tersebut bisa memiliki parameter</p>
+    <p>constructor function sama seperti function biasanya, bisa memiliki paramter, hal ini membuat ketika kita membuat object, kita bisa mengirim langsung data lewat parameter di constructor function tersebut.</p>
+    
+    <p>kode parameter di constructor function</p>
+    <pre><code>function Person(fisrtName, lastName){
+   this.firstName = "";
+   this.lastName = "";
+   this.sayHello = function (name) {
+    document.writeln(`hello ${name}, my name is ${this.firstName}`);
+   }
+}</code></pre>
+
+    <h1>constructor inheritance</h1>
+    <p>dalam constructor kita biasanya membuat property baik itu berisi value ataupun function</p>
+    <p>didalam constructor, kita bisa memanggil constructor lain, dengan begitu ktia bisa mewarisi semua property yang dibuat di constructor lain tersebut</p>
+    <p>untuk memanggil constructor lain, kita bisa menggunakan NamaConsctructor.call(this.parameter)</p>
+
+    <p>kode constructor inheritance</p>
+    <pre><code>function Employee(firstName){
+  this.firstName = firstName;
+  this.sayHello = function (name) {
+    document.writeln(`halo $name, my name is ${this.name}`);
+  }
+}
+
+function Manager(firstName, lastName){
+  Employee.call(this, firstNae);
+  this.lastName = lastName;
+}
+</code></pre>
+
+    <h1>prototype</h1>
+    <p>javascript sebelumnya dikenal dengan pemrograman berbasis prototype</p>
+    <p>memang agak sedikit membingungkan, dan tidak dipungkiri, banyak sekali yang bingung dengan konsep prototype di javascript</p>
+
+    <h2>protorype inheritance</h2>
+    <p>saat kita membuat object dari constructor function, object tersebut disebut instance, semua property (baik itu value atau method), akan berada di dalam instance objectnya</p>
+    <p>setiap kita membuat sebuah constructor function, maka secara otomatis akan dibuatkan prototypenya, misal ketika kita membuat constructor function person, maka akan ada person.prototype</p>
+    <p>saat kita membuat sebuah object instance, secara otomatis object tersebut adalah turunan dari constructor protorypenya</p>
+    <p>untuk mengakses prototype milik sebuah instance, kita bisa menggunakan __proto__</p>
+
+    <p>kode object instance</p>
+    <pre><code>const kemas = new Person("Kemas", "Yunus");
+const reina = new Person("Kousaka", "Reina");
+
+console.info(kemas);
+console.info(reina);
+    </code></pre>
+    </main>
+  </body>
 </html>
 
